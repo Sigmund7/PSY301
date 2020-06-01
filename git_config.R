@@ -10,6 +10,6 @@ git_setup <- function(email, name) {
 
 # Now call our new function...
 git_setup(
-  email = "YOUR EMAIL ADDRESS",
-  name = "YOUR NAME HERE"  
+  email = "r7potter@mac.com",
+  name = "Randy Potter"  
 )
