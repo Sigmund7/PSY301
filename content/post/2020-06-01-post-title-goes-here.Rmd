@@ -1,0 +1,33 @@
+---
+title: Statistical Things and Stuff
+author: Doc P
+date: '2020-06-01'
+slug: Statistical Things and Stuff
+categories: []
+tags: []
+---
+I am going to write things about statistics.
+
+## But first, a Header
+
+and then a picture:
+
+![](https://placekitten.com/200/400)
+
+and then a link:
+[Placekitten](https://placekitten.com/200/200)
+
+And then some *itallics*
+and then some **BOLD**
+
+and then a list:
+
+- this
+- that
+- the other
+
+and finally, a numbeed list:
+
+1. that
+2. this
+3. the other

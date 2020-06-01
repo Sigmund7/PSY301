@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on Slumdown</title>
@@ -6,10 +6,25 @@
     <description>Recent content in Home on Slumdown</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Statistical Things and Stuff</title>
+      <link>/post/statistical-things-and-stuff/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/statistical-things-and-stuff/</guid>
+      <description> I am going to write things about statistics.
+But first, a Header and then a picture:
+and then a link: Placekitten
+And then some itallics and then some BOLD
+and then a list:
+ this that the other  and finally, a numbeed list:
+that this the other   </description>
+    </item>
     
     <item>
       <title>Tutorial part 1: Getting started</title>
