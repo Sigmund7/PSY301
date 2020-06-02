@@ -3,12 +3,12 @@ title: Home
 ---
 
 
-# An Introduction to Slumdown
+# R resources for Introductory Statistics
 
-### A Hugo theme and R package by [Danielle Navarro](https://twitter.com/djnavarro)
 
-<img src="header/slumdown.png" width="150px" style="float:right; padding:15px;">
+
+
 
 <br>
 
-The idea behind *slumdown* is to provide an R package and Hugo theme designed to work together when writing a *blogdown* site (see the [about](about/) page for more detail). The posts listed below area work in progress, but are intended to serve as a succinct introduction and how-to guide.
+The resources on this site will benefir students in my undergraduate statistics class and may be of use to students in Research Methods and Senior Seminar who no longer have access via our university LMS.
