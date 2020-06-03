@@ -5,10 +5,4 @@ title: Home
 
 # R resources for Introductory Statistics
 
-
-
-
-
-<br>
-
-The resources on this site will benefir students in my undergraduate statistics class and may be of use to students in Research Methods and Senior Seminar who no longer have access via our university LMS.
+This website contains resources for my undergraduate statistics students as well as material that might be of use to students Research Methods and Senior Seminar.  Most of these resources are available in the learning management system for PSY 301 but, for students not currently enrolled in that class, this may be a more accessable resource.
