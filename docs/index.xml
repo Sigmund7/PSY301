@@ -1,15 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Statistics Home</title>
+    <title>Home on Slumdown</title>
     <link>/</link>
-    <description>Recent content Statistics</description>
+    <description>Recent content in Home on Slumdown</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A Index to Crib Sheets</title>
+      <link>/post/a-index-to-crib-sheets/</link>
+      <pubDate>Thu, 04 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/a-index-to-crib-sheets/</guid>
+      <description>Index to the Crib Sheets A -Index to Crib Sheets (This document)
+B -Index to Marin Videos
+C-Introduction to R
+D-Downloading R -Marin Reference: R Tutorial 1.0
+E-Set Working Directory
+F-Graphing with R -Marin Reference: Series 2
+G-Graphics Commands -Marin Reference: Series 2 (Specific reference for each style graph)
+H-Data Entry in R
+I-Saving Data
+J-Load_Save Data -Marin Reference: R Tutorial 1.3
+K-Correlation R -
+L-Regression R -Marin Reference: R Tutorial 5.</description>
+    </item>
     
     <item>
       <title>Statistical Things and Stuff</title>
@@ -90,12 +110,13 @@ that this the other   </description>
     </item>
     
     <item>
-      <title>About</title>
+      <title>Homepage</title>
       <link>/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>The idea behind slumdown The slum theme for Hugo and blogdown is an adaptation Yihue Xie’s Xmin theme that borrows stylistic elements from the Tufte R Markdown theme and from the academic Hugo theme. Originally it was intended to be extremely minimal, with the very modest goal of trying to make sure I understood the logic of how Hugo generates static sites. The more I played with it though, the more I enjoyed it.</description>
+      <description> Resources for PSY 301 This website contains resources for my undergraduate statistics students as well as material that might be of use to students Research Methods and Senior Seminar. Most of these resources are available in the learning management system for PSY 301 but, for students not currently enrolled in that class, this may be a more accessable resource.
+ </description>
     </item>
     
   </channel>

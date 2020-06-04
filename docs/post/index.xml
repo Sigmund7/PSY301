@@ -1,15 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Statistics Posts</title>
+    <title>Posts on Slumdown</title>
     <link>/post/</link>
-    <description>Recent content in Statistics</description>
+    <description>Recent content in Posts on Slumdown</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A Index to Crib Sheets</title>
+      <link>/post/a-index-to-crib-sheets/</link>
+      <pubDate>Thu, 04 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/a-index-to-crib-sheets/</guid>
+      <description>Index to the Crib Sheets A -Index to Crib Sheets (This document)
+B -Index to Marin Videos
+C-Introduction to R
+D-Downloading R -Marin Reference: R Tutorial 1.0
+E-Set Working Directory
+F-Graphing with R -Marin Reference: Series 2
+G-Graphics Commands -Marin Reference: Series 2 (Specific reference for each style graph)
+H-Data Entry in R
+I-Saving Data
+J-Load_Save Data -Marin Reference: R Tutorial 1.3
+K-Correlation R -
+L-Regression R -Marin Reference: R Tutorial 5.</description>
+    </item>
     
     <item>
       <title>Statistical Things and Stuff</title>

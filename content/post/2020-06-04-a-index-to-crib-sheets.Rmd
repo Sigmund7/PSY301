@@ -1,0 +1,53 @@
+---
+title: A Index to Crib Sheets
+author: Doc P
+date: '2020-06-04'
+slug: a-index-to-crib-sheets
+categories: []
+tags: []
+---
+## Index to the Crib Sheets
+
+A -Index to Crib Sheets (This document)
+
+B -Index to Marin Videos
+
+C-Introduction to R
+
+D-Downloading R -Marin Reference: R Tutorial 1.0
+
+E-Set Working Directory
+
+F-Graphing with R -Marin Reference: Series 2
+
+G-Graphics Commands -Marin Reference: Series 2 (Specific reference for each style graph)
+
+H-Data Entry in R
+
+I-Saving Data
+
+J-Load_Save Data -Marin Reference: R Tutorial 1.3
+
+K-Correlation R -
+
+L-Regression R -Marin Reference: R Tutorial 5.1
+
+M-Checking Regression Assumptions -
+
+N-Multiple Linear Regression -Marin Reference: R Tutorial 5.3 (Crib not done yet)
+
+O-Binomial Distribution R
+
+P-Normal Distribution R -Marin Reference: R Tutorial 3.3
+
+Q-t Distribution -Marin Reference:  R Tutorials 3.4, 4.1, 4.2
+
+R-Chi Squared R -Marin Reference: R Tutorial 4.7
+
+S-Mann-Whitney U -Marin Reference: R Tutorial 4.3
+
+T-Wilcoxon T -Marin Reference: R Tutorial 4.5
+
+U -ANOVA with R -Marin Reference: R Tutorial 4.6
+
+V-Two Way ANOVA with R

@@ -110,7 +110,6 @@ footnotereturnlinkcontents = "↩"
 [params]
     siteHeader = "header/Walk.png"
     siteProfile = "header/DocP.png"
-    twitterImage = 
     colourScheme = "css/palette_dark.css"
     description = "A website built using slumdown."
-    footer = "&copy; Randy Potter 2020 | [Github](https://github.com/Sigmund7) | 
+    footer = "&copy; Randy Potter 2020 | [Github](https://github.com/Sigmund7)"
