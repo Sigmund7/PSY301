@@ -1,0 +1,56 @@
+---
+title: "W RM ANOVA"
+author: "Doc P"
+date: '2020-06-04'
+slug: w-rm-anova
+tags: []
+categories: []
+---
+ ```{r setup, include=FALSE}
+Kwide <- read.csv(url("HTTP://github.com/Sigmund7/PSY301/Kwide.csv"))
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+###Data Wrangling
+
+Repeated measures spreadsheets are usually set up in "wide" format, with a row for each subject and a column for each observation. R requires that the data be in "long" format, with a column for Subject numbers, a second column for Trials, and a third column for Scores.  We will be using a data set (Kwide) which is in the wide format.The "head" command will show us the first several rows of data.
+
+```{r}
+head(Kwide)
+```
+
+To convert this to a long form data set, we use the following code.
+
+```{r}
+library(reshape2)
+Klong <- melt(Kwide,)
+Klong <- melt(Kwide, id = "Subject", measured = c("Trial1", "Trial2", "Trial3","Trial4","Trial5", "Trial6"))
+head(Klong)
+```
+
+The default column names are not very descriptive, so you may want to change them to names better suited to the data.
+
+```{r}
+colnames(Klong) = c("Subject", "Trial", "Score")
+head(Klong)
+```
+
+Note that, if you want to see the entire data set you can just call "Klong".  I use the "head" command so that R does not print the entire, rather lengthy, list.
+
+```{r}
+Klong
+```
+
+Once the data are in long format, the actual ANOVA is quite easy to run.  I prefer to use the "ezANOVA" routine from the "ez" package.  If you have never installed the package, you should go to "Install" in the drop down menu of the lower right pane of RStudio, type "ez" (without the quotes) in the "Packages" window and then click install. THe following code will then run the package and perform the ANOVA.
+
+```{r}
+library(ez)
+anova1 <-ezANOVA(data = Klong, wid = Subject, within = Trial, dv = Score, type = 3)
+anova1
+```
+
+For our purposes, the important information is in the third line of the ANOVA table.  The calculated F statistic is 10.30605, and the p-value is 3.913192e-06 (or 0.0000039), which is much smaller than 0.05.
+
+If you happen to have your data in long format, you can skip the reshaping and run the ANOVA directly using this same code.  I recommend importing the data set using the "readr" command and checking to see that the Subject and Trial variables are recognized as factors.
+
+
