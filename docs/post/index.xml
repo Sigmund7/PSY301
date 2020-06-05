@@ -21,14 +21,6 @@
 Repeated measures spreadsheets are usually set up in “wide” format, with a row for each subject and a column for each observation. R requires that the data be in “long” format, with a column for Subject numbers, a second column for Trials, and a third column for Scores. We will be using a data set (Kwide) which is in the wide format.The “head” command will show us the first several rows of data.</description>
     </item>
     
-    <item>
-      <title>V RM ANOVA</title>
-      <link>/post/v-rm-anova/</link>
-      <pubDate>Thu, 04 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/v-rm-anova/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Statistical Things and Stuff</title>
