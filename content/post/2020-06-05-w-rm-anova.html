@@ -1,0 +1,121 @@
+---
+title: W RM ANOVA
+author: Doc P
+date: '2020-06-05'
+slug: w-rm-anova
+categories: []
+tags: []
+---
+
+
+
+<p>###Data Wrangling</p>
+<p>Repeated measures spreadsheets are usually set up in “wide” format, with a row for each subject and a column for each observation. R requires that the data be in “long” format, with a column for Subject numbers, a second column for Trials, and a third column for Scores. We will be using a data set (Kwide) which is in the wide format.The “head” command will show us the first several rows of data.</p>
+<pre class="r"><code>head(Kwide)</code></pre>
+<pre><code>## # A tibble: 6 x 7
+##   Subject Trial1 Trial2 Trial3 Trial4 Trial5 Trial6
+##     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1       1      7      3      2      2      1      1
+## 2       2      4      8      3      8      1      2
+## 3       3      7      6      3      1      5      4
+## 4       4      8      6      1      0      2      0
+## 5       5      7      2      3      0      1      3
+## 6       6      6      3      3      1      1      1</code></pre>
+<p>To convert this to a long form data set, we use the following code.</p>
+<pre class="r"><code>library(reshape2)
+Klong &lt;- melt(Kwide,)</code></pre>
+<pre><code>## No id variables; using all as measure variables</code></pre>
+<pre class="r"><code>Klong &lt;- melt(Kwide, id = &quot;Subject&quot;, measured = c(&quot;Trial1&quot;, &quot;Trial2&quot;, &quot;Trial3&quot;,&quot;Trial4&quot;,&quot;Trial5&quot;, &quot;Trial6&quot;))
+head(Klong)</code></pre>
+<pre><code>##   Subject variable value
+## 1       1   Trial1     7
+## 2       2   Trial1     4
+## 3       3   Trial1     7
+## 4       4   Trial1     8
+## 5       5   Trial1     7
+## 6       6   Trial1     6</code></pre>
+<p>The default column names are not very descriptive, so you may want to change them to names better suited to the data.</p>
+<pre class="r"><code>colnames(Klong) = c(&quot;Subject&quot;, &quot;Trial&quot;, &quot;Score&quot;)
+head(Klong)</code></pre>
+<pre><code>##   Subject  Trial Score
+## 1       1 Trial1     7
+## 2       2 Trial1     4
+## 3       3 Trial1     7
+## 4       4 Trial1     8
+## 5       5 Trial1     7
+## 6       6 Trial1     6</code></pre>
+<p>Note that, if you want to see the entire data set you can just call “Klong”. I use the “head” command so that R does not print the entire, rather lengthy, list.</p>
+<pre class="r"><code>Klong</code></pre>
+<pre><code>##    Subject  Trial Score
+## 1        1 Trial1     7
+## 2        2 Trial1     4
+## 3        3 Trial1     7
+## 4        4 Trial1     8
+## 5        5 Trial1     7
+## 6        6 Trial1     6
+## 7        7 Trial1     4
+## 8        8 Trial1     6
+## 9        1 Trial2     3
+## 10       2 Trial2     8
+## 11       3 Trial2     6
+## 12       4 Trial2     6
+## 13       5 Trial2     2
+## 14       6 Trial2     3
+## 15       7 Trial2     2
+## 16       8 Trial2     7
+## 17       1 Trial3     2
+## 18       2 Trial3     3
+## 19       3 Trial3     3
+## 20       4 Trial3     1
+## 21       5 Trial3     3
+## 22       6 Trial3     3
+## 23       7 Trial3     0
+## 24       8 Trial3     5
+## 25       1 Trial4     2
+## 26       2 Trial4     8
+## 27       3 Trial4     1
+## 28       4 Trial4     0
+## 29       5 Trial4     0
+## 30       6 Trial4     1
+## 31       7 Trial4     0
+## 32       8 Trial4     1
+## 33       1 Trial5     1
+## 34       2 Trial5     1
+## 35       3 Trial5     5
+## 36       4 Trial5     2
+## 37       5 Trial5     1
+## 38       6 Trial5     1
+## 39       7 Trial5     0
+## 40       8 Trial5     3
+## 41       1 Trial6     1
+## 42       2 Trial6     2
+## 43       3 Trial6     4
+## 44       4 Trial6     0
+## 45       5 Trial6     3
+## 46       6 Trial6     1
+## 47       7 Trial6     0
+## 48       8 Trial6     2</code></pre>
+<p>Once the data are in long format, the actual ANOVA is quite easy to run. I prefer to use the “ezANOVA” routine from the “ez” package. If you have never installed the package, you should go to “Install” in the drop down menu of the lower right pane of RStudio, type “ez” (without the quotes) in the “Packages” window and then click install. THe following code will then run the package and perform the ANOVA.</p>
+<pre class="r"><code>library(ez)</code></pre>
+<pre><code>## Registered S3 methods overwritten by &#39;lme4&#39;:
+##   method                          from
+##   cooks.distance.influence.merMod car 
+##   influence.merMod                car 
+##   dfbeta.influence.merMod         car 
+##   dfbetas.influence.merMod        car</code></pre>
+<pre class="r"><code>anova1 &lt;-ezANOVA(data = Klong, wid = Subject, within = Trial, dv = Score, type = 3)</code></pre>
+<pre><code>## Warning: Converting &quot;Subject&quot; to factor for ANOVA.</code></pre>
+<pre class="r"><code>anova1</code></pre>
+<pre><code>## $ANOVA
+##   Effect DFn DFd        F            p p&lt;.05       ges
+## 2  Trial   5  35 10.30605 3.913192e-06     * 0.4863419
+## 
+## $`Mauchly&#39;s Test for Sphericity`
+##   Effect          W         p p&lt;.05
+## 2  Trial 0.02894108 0.2503867      
+## 
+## $`Sphericity Corrections`
+##   Effect       GGe        p[GG] p[GG]&lt;.05       HFe        p[HF] p[HF]&lt;.05
+## 2  Trial 0.4678431 0.0008740865         * 0.7172066 6.779717e-05         *</code></pre>
+<p>For our purposes, the important information is in the third line of the ANOVA table. The calculated F statistic is 10.30605, and the p-value is 3.913192e-06 (or 0.0000039), which is much smaller than 0.05.</p>
+<p>If you happen to have your data in long format, you can skip the reshaping and run the ANOVA directly using this same code. I recommend importing the data set using the “readr” command and checking to see that the Subject and Trial variables are recognized as factors.</p>

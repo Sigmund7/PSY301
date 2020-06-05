@@ -6,29 +6,19 @@
     <description>Recent content in Posts on Slumdown</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 05 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>A Index to Crib Sheets</title>
-      <link>/post/a-index-to-crib-sheets/</link>
-      <pubDate>Thu, 04 Jun 2020 00:00:00 +0000</pubDate>
+      <title>W RM ANOVA</title>
+      <link>/post/w-rm-anova/</link>
+      <pubDate>Fri, 05 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/a-index-to-crib-sheets/</guid>
-      <description>Index to the Crib Sheets A -Index to Crib Sheets (This document)
-B -Index to Marin Videos
-C-Introduction to R
-D-Downloading R -Marin Reference: R Tutorial 1.0
-E-Set Working Directory
-F-Graphing with R -Marin Reference: Series 2
-G-Graphics Commands -Marin Reference: Series 2 (Specific reference for each style graph)
-H-Data Entry in R
-I-Saving Data
-J-Load_Save Data -Marin Reference: R Tutorial 1.3
-K-Correlation R -
-L-Regression R -Marin Reference: R Tutorial 5.</description>
+      <guid>/post/w-rm-anova/</guid>
+      <description>###Data Wrangling
+Repeated measures spreadsheets are usually set up in “wide” format, with a row for each subject and a column for each observation. R requires that the data be in “long” format, with a column for Subject numbers, a second column for Trials, and a third column for Scores. We will be using a data set (Kwide) which is in the wide format.The “head” command will show us the first several rows of data.</description>
     </item>
     
     <item>
