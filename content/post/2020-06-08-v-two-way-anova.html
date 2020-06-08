@@ -1,0 +1,86 @@
+---
+title: V Two-way ANOVA
+author: DocP
+date: '2020-06-08'
+slug: v-two-way-anova
+categories: []
+tags: []
+---
+
+
+
+<p>This example is based on sample problem 16.1 in Robert Pagano’s <em>Understanding Statistics in the Behavioral Sciences, 10th Edition</em>.</p>
+<p>The study looks at the effects of exercise on sleep.</p>
+<p>There were two times of day, Morning and Evening, and three exercise conditions, Light, Moderate, and Heavy. This was a completely randomized design, where each subject appeared in only one condition. Thus, we have a 2X3 ANOVA design and can evaluate main effects of Time of Day and Exercise, as well as any interaction that might exist between these two factors.</p>
+<p>The data used in this evaluation can be found in the .csv file “ExerciseSleep” in the Data module of our D2L site.</p>
+<p>Import and attach the data.</p>
+<p>###Visualizations</p>
+<p>You may want to do box plots of Time and Intensity:</p>
+<pre class="r"><code>boxplot(Sleep ~ Time)</code></pre>
+<p><img src="/post/2020-06-08-v-two-way-anova_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="r"><code>boxplot(Sleep ~ Intensity)</code></pre>
+<p><img src="/post/2020-06-08-v-two-way-anova_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
+<p>Note that the order of the factors on the box plots is not very “tidy”. This is not a real issue for the Time plot as there are only two categories but is problematic for the Intensity plot. The order of the factors can be changed using the “factor” and “levels” commands.</p>
+<pre class="r"><code>orderint &lt;- factor(Intensity, levels = c(&quot;Light&quot;, &quot;Mod&quot;, &quot;Heavy&quot;)) 
+boxplot(Sleep ~ orderint)</code></pre>
+<p><img src="/post/2020-06-08-v-two-way-anova_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Will reorder the Intensity levels .</p>
+<pre class="r"><code>ordertime &lt;- factor(Time, levels = c(&quot;Morn&quot;, &quot;Eve&quot;)) 
+boxplot(Sleep ~ ordertime)</code></pre>
+<p><img src="/post/2020-06-08-v-two-way-anova_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Will reorder the time of day.</p>
+<p>###ANOVA calculations</p>
+<p>The “aov”&quot; command will perform the ANOVA, which we will store into an object called tbl. The model specifies that the dependent measure (Sleep) is a function of both grouping factors (Time and Intensity). In addition, the &quot;*&quot; tells R to calculate the effect of the interaction of Time and Intensity.</p>
+<pre class="r"><code>tbl &lt;- aov(Sleep ~ Time * Intensity)
+summary(tbl)</code></pre>
+<pre><code>##                Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## Time            1  9.000   9.000  48.416 9.93e-08 ***
+## Intensity       2  4.754   2.377  12.787 9.63e-05 ***
+## Time:Intensity  2  1.712   0.856   4.604    0.018 *  
+## Residuals      30  5.577   0.186                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>The values in the table should look familiar by this point. The rightmost column tells us the probably of the associated F statistic. We can see from the table that there is a main effect of both Time and Intensity, as well as an interaction between Time and Intensity.</p>
+<p>We can plot the data to obtain a visual representation of the interaction.</p>
+<pre class="r"><code>interaction.plot(orderint, ordertime, Sleep)</code></pre>
+<p><img src="/post/2020-06-08-v-two-way-anova_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>will produce a graph which shows the average amount of sleep for Evening and Morning exercisers plotted by intensity of exercise. We can see from the plot both the main effects and the interaction.</p>
+<p>We can perform an analysis of the “simple main effect” of time intensity by subsetting the data and running the aov function on each of the subsets.</p>
+<pre class="r"><code>dmorn &lt;- subset(ExerciseSleep, Time == &quot;Morn&quot;, select = c(Sleep, Intensity)) 
+aovMorn &lt;-aov(Sleep ~ Intensity, dmorn)
+summary(aovMorn)</code></pre>
+<pre><code>##             Df Sum Sq Mean Sq F value Pr(&gt;F)
+## Intensity    2 0.4844  0.2422   1.373  0.283
+## Residuals   15 2.6467  0.1764</code></pre>
+<pre class="r"><code>deve &lt;- subset(ExerciseSleep, Time == &quot;Eve&quot;, select = c(Sleep, Intensity)) 
+aovEve &lt;-aov(Sleep ~ Intensity, deve)
+summary(aovEve)</code></pre>
+<pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## Intensity    2  5.981  2.9906   15.31 0.000238 ***
+## Residuals   15  2.930  0.1953                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>These analyses suggest that there is a simple main effect of intensity in the evening, but not in the morning.</p>
+<p>Tukey HSD tests could be performed for pairwise comparisons L-M, L-H, M-H within the aovEve data set.</p>
+<pre class="r"><code>Tukey &lt;- TukeyHSD(aovEve)
+Tukey</code></pre>
+<pre><code>##   Tukey multiple comparisons of means
+##     95% family-wise confidence level
+## 
+## Fit: aov(formula = Sleep ~ Intensity, data = deve)
+## 
+## $Intensity
+##                   diff        lwr        upr     p adj
+## Light-Heavy -1.3166667 -1.9794600 -0.6538733 0.0003228
+## Mod-Heavy   -1.1000000 -1.7627933 -0.4372067 0.0016833
+## Mod-Light    0.2166667 -0.4461267  0.8794600 0.6792853</code></pre>
+<p>The Tukey tests tell us that there is a difference between Light and Heavy exercise, Moderate and Heavy Exercise, but not between Light and Moderate exercise.</p>
+<p>While this example has a significant interaction, it is sometimes the case that there is not an interaction. In this case, one can drop the interaction term from the analysis by replacing the &quot;*&quot; with a “+” in the ANOVA formula.</p>
+<pre class="r"><code>tbl &lt;- aov(Sleep ~ Time + Intensity)
+summary(tbl)</code></pre>
+<pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## Time         1  9.000   9.000   39.52 4.75e-07 ***
+## Intensity    2  4.754   2.377   10.44 0.000324 ***
+## Residuals   32  7.288   0.228                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>

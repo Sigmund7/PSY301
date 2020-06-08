@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Slumdown</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 08 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>V Two-way ANOVA</title>
+      <link>/post/v-two-way-anova/</link>
+      <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/v-two-way-anova/</guid>
+      <description>This example is based on sample problem 16.1 in Robert Pagano’s Understanding Statistics in the Behavioral Sciences, 10th Edition.
+The study looks at the effects of exercise on sleep.
+There were two times of day, Morning and Evening, and three exercise conditions, Light, Moderate, and Heavy. This was a completely randomized design, where each subject appeared in only one condition. Thus, we have a 2X3 ANOVA design and can evaluate main effects of Time of Day and Exercise, as well as any interaction that might exist between these two factors.</description>
+    </item>
     
     <item>
       <title>W RM ANOVA</title>
@@ -20,7 +31,6 @@
       <description>###Data Wrangling
 Repeated measures spreadsheets are usually set up in “wide” format, with a row for each subject and a column for each observation. R requires that the data be in “long” format, with a column for Subject numbers, a second column for Trials, and a third column for Scores. We will be using a data set (Kwide) which is in the wide format.The “head” command will show us the first several rows of data.</description>
     </item>
-    
     
     <item>
       <title>Statistical Things and Stuff</title>
