@@ -1,0 +1,42 @@
+---
+title: T Wilcoxon Matched Pairs Signed Ranks Test
+author: DocP
+date: '2020-06-08'
+slug: t-wilcoxon-matched-pairs-signed-ranks-test
+categories: []
+tags: []
+---
+```{r, echo = FALSE, message=FALSE}
+  library(readr)
+  BP <- read_csv("BloodPressure.csv")
+  attach(BP)
+  ```
+
+
+Reference:Marin R Tutorial 4.5
+
+Data set: BloodPressure
+
+Read the data set in to R and attach it.
+ASs always, it is a good idea to produce a graphic so we can better visualize our data. A box plot is appropriate in this case.
+
+```{r}
+boxplot(Before, After)
+```
+
+We may also want to see a summary of the data. I renamed it "BP" to save some typing.
+
+```{r}
+summary(BP)
+```
+
+The actual Wilcoxon matched pairs signed ranks test is as follows.
+
+```{r}
+wilcox.test(Before, After, mu = 0, alt = "two.sided", paired = T, conf.int = T, conf.level = 0.99, exact = F)
+```
+
+All are defaults except paired and exact. "paired = T" is necessary in this case so R knows to run the Wilcoxon T rather than the Rank Sums test. "exact = T" will generate warnings due to the ties.
+
+The small p value suggests that whatever manipulation we performed between the Before and After readings were taken must have been successful.
+

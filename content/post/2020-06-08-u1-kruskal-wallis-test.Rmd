@@ -1,0 +1,33 @@
+---
+title: U1 - Kruskal-Wallis Test
+author: DocP
+date: '2020-06-08'
+slug: u1-kruskal-wallis-test
+categories: []
+tags: []
+---
+```{r, echo = FALSE, message=FALSE}
+  library(readr)
+  DWL <- read_csv("DietWeightLoss.csv")
+  attach(DWL)
+  ```
+
+
+If the assumptions of the ANOVA are not met, we might choose to perform a Kruskal-Wallis test.
+
+```{r}
+kruskal.test(WeightLoss ~ Diet)
+```
+
+
+Note:  Some versions of R seem to require that the group variable be an integer rather than a character for the kruskal.test command.  I added a third column (NumDiet) to the spreadsheet which replaced the character variable “Diet” with an integer value.
+
+```{r}
+kruskal.test(WeightLoss ~ NumDiet)
+```
+
+Previous versions of R could handle the character variable, so this feature may return in the future (it works with the version currently on my computer). Until then, if you have a grouping variable that is coded as character, a numeric replacement may be required.
+
+Note that, in this case, the outcome is very similar to that of the ANOVA.
+
+Unfortunately, there is no equivalent to the Tukey HSD for the K-W test so post hoc comparisons have to be done with a Mann-Whitney test.

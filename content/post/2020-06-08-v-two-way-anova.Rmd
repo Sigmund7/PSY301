@@ -24,7 +24,7 @@ The data used in this evaluation can be found in the  .csv file “ExerciseSleep
 
 Import and attach the data.
 
-###Visualizations
+### Visualizations
 
 You may want to do box plots of Time and Intensity: 
 
@@ -49,7 +49,7 @@ boxplot(Sleep ~ ordertime)
 
 Will reorder the time of day.
 
-###ANOVA calculations
+### ANOVA calculations
 
 The "aov"" command will perform the ANOVA, which we will store into an object called tbl. The model specifies that the dependent measure (Sleep) is a function of both grouping factors (Time and Intensity).  In addition, the "*" tells R to calculate the effect of the interaction of Time and Intensity.
 

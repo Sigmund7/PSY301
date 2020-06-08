@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>U1 - Kruskal-Wallis Test | Slumdown</title>
+
+  <link rel="stylesheet" href=../../css/palette_dark.css />
+  
+  <link rel="stylesheet" href="../../css/et_book.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="U1 - Kruskal-Wallis Test">
+<meta property="og:description" content="If the assumptions of the ANOVA are not met, we might choose to perform a Kruskal-Wallis test.
+kruskal.test(WeightLoss ~ Diet) ## ## Kruskal-Wallis rank sum test ## ## data: WeightLoss by Diet ## Kruskal-Wallis chi-squared = 15.902, df = 3, p-value = 0.001188 Note: Some versions of R seem to require that the group variable be an integer rather than a character for the kruskal.test command. I added a third column (NumDiet) to the spreadsheet which replaced the character variable “Diet” with an integer value.">
+<meta property="og:image" content="">
+
+</head>
+
+
+  <body>
+    
+
+
+
+    <div class="main-content">
+      <nav>
+  <ul class="menu">
+    
+    <li><a href="../../">Home</a></li>
+    
+    <li><a href="../../about/">About</a></li>
+    
+    <li><a href="../../post/">Posts</a></li>
+    
+    <li><a href="../../project/">Projects</a></li>
+    
+    <li><a href="../../tags/">Tags</a></li>
+    
+  </ul>
+</nav>
+
+      <div>
+  <h1>U1 - Kruskal-Wallis Test</h1>
+  <h3>
+    by DocP, 08 Jun 2020
+  </h3>
+  <br><br>
+</div>
+
+
+      <main>
+        
+
+
+<p>If the assumptions of the ANOVA are not met, we might choose to perform a Kruskal-Wallis test.</p>
+<pre class="r"><code>kruskal.test(WeightLoss ~ Diet)</code></pre>
+<pre><code>## 
+##  Kruskal-Wallis rank sum test
+## 
+## data:  WeightLoss by Diet
+## Kruskal-Wallis chi-squared = 15.902, df = 3, p-value = 0.001188</code></pre>
+<p>Note: Some versions of R seem to require that the group variable be an integer rather than a character for the kruskal.test command. I added a third column (NumDiet) to the spreadsheet which replaced the character variable “Diet” with an integer value.</p>
+<pre class="r"><code>kruskal.test(WeightLoss ~ NumDiet)</code></pre>
+<pre><code>## 
+##  Kruskal-Wallis rank sum test
+## 
+## data:  WeightLoss by NumDiet
+## Kruskal-Wallis chi-squared = 15.902, df = 3, p-value = 0.001188</code></pre>
+<p>Previous versions of R could handle the character variable, so this feature may return in the future (it works with the version currently on my computer). Until then, if you have a grouping variable that is coded as character, a numeric replacement may be required.</p>
+<p>Note that, in this case, the outcome is very similar to that of the ANOVA.</p>
+<p>Unfortunately, there is no equivalent to the Tukey HSD for the K-W test so post hoc comparisons have to be done with a Mann-Whitney test.</p>
+
+      </main>
+
+      <footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+
+  <script>
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  </script>
+
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <br/><br/>
+  © Randy Potter 2020 | <a href="https://github.com/Sigmund7">Github</a>
+  <br/><br/>
+  
+</footer>
+
+
+    </div>
+  </body>
+</html>

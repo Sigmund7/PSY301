@@ -12,6 +12,42 @@
     
     
     <item>
+      <title>T Wilcoxon Matched Pairs Signed Ranks Test</title>
+      <link>/post/t-wilcoxon-matched-pairs-signed-ranks-test/</link>
+      <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/t-wilcoxon-matched-pairs-signed-ranks-test/</guid>
+      <description>Reference:Marin R Tutorial 4.5
+Data set: BloodPressure
+Read the data set in to R and attach it. ASs always, it is a good idea to produce a graphic so we can better visualize our data. A box plot is appropriate in this case.
+boxplot(Before, After) We may also want to see a summary of the data. I renamed it “BP” to save some typing.
+summary(BP) ## Subject Before After ## Min.</description>
+    </item>
+    
+    <item>
+      <title>U One Way ANOVA in R</title>
+      <link>/post/u-one-way-anova-in-r/</link>
+      <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/u-one-way-anova-in-r/</guid>
+      <description>Reference: Marin video R Tutorial 4.6
+Data set: DietWeightLoss
+Download and attach the data set if you want to follow along.
+Analysis of Variance or ANOVA is one of the most common and powerful statistical techniques available. While ANOVA designes can become quite complicated, the single factor design is quite straightforward and easy to understand. It is also very simple to perform in R.
+The null hypothesis (Ho) for the ANOVA is that all groups will perform equally (in this case, lose of gain the same amount of weight).</description>
+    </item>
+    
+    <item>
+      <title>U1 - Kruskal-Wallis Test</title>
+      <link>/post/u1-kruskal-wallis-test/</link>
+      <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/u1-kruskal-wallis-test/</guid>
+      <description>If the assumptions of the ANOVA are not met, we might choose to perform a Kruskal-Wallis test.
+kruskal.test(WeightLoss ~ Diet) ## ## Kruskal-Wallis rank sum test ## ## data: WeightLoss by Diet ## Kruskal-Wallis chi-squared = 15.902, df = 3, p-value = 0.001188 Note: Some versions of R seem to require that the group variable be an integer rather than a character for the kruskal.test command. I added a third column (NumDiet) to the spreadsheet which replaced the character variable “Diet” with an integer value.</description>
+    </item>
+    
+    <item>
       <title>V Two-way ANOVA</title>
       <link>/post/v-two-way-anova/</link>
       <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>

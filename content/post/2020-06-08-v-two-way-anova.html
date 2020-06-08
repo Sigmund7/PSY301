@@ -14,7 +14,8 @@ tags: []
 <p>There were two times of day, Morning and Evening, and three exercise conditions, Light, Moderate, and Heavy. This was a completely randomized design, where each subject appeared in only one condition. Thus, we have a 2X3 ANOVA design and can evaluate main effects of Time of Day and Exercise, as well as any interaction that might exist between these two factors.</p>
 <p>The data used in this evaluation can be found in the .csv file “ExerciseSleep” in the Data module of our D2L site.</p>
 <p>Import and attach the data.</p>
-<p>###Visualizations</p>
+<div id="visualizations" class="section level3">
+<h3>Visualizations</h3>
 <p>You may want to do box plots of Time and Intensity:</p>
 <pre class="r"><code>boxplot(Sleep ~ Time)</code></pre>
 <p><img src="/post/2020-06-08-v-two-way-anova_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
@@ -29,7 +30,9 @@ boxplot(Sleep ~ orderint)</code></pre>
 boxplot(Sleep ~ ordertime)</code></pre>
 <p><img src="/post/2020-06-08-v-two-way-anova_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Will reorder the time of day.</p>
-<p>###ANOVA calculations</p>
+</div>
+<div id="anova-calculations" class="section level3">
+<h3>ANOVA calculations</h3>
 <p>The “aov”&quot; command will perform the ANOVA, which we will store into an object called tbl. The model specifies that the dependent measure (Sleep) is a function of both grouping factors (Time and Intensity). In addition, the &quot;*&quot; tells R to calculate the effect of the interaction of Time and Intensity.</p>
 <pre class="r"><code>tbl &lt;- aov(Sleep ~ Time * Intensity)
 summary(tbl)</code></pre>
@@ -84,3 +87,4 @@ summary(tbl)</code></pre>
 ## Residuals   32  7.288   0.228                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+</div>
