@@ -1,0 +1,37 @@
+---
+title: 'S Mann-Whitney U '
+author: DocP
+date: '2020-06-08'
+slug: s-mann-whitney-u
+categories: []
+tags: []
+---
+```{r, echo = FALSE, message=FALSE}
+  library(readr)
+  MWU <- read_csv("MWU.csv")
+  attach(MWU)
+  ```
+  
+  The Mann-Whitney U test (also known as the Wilcoxon Rank Sum Test) is a useful alternative to the Independent Groups t when the assumptions of the t are not met. It is sensitive to tied ranks so is best used when the data set is relatively small or the measurements are sufficiently precise as to make duplicate scores unlikely.
+
+Reference: Marin - R Tutorial 4.3
+
+
+We will use the MWU data set for our example. You should load and attach the data from D2L before running any of the R code below. We will be testing to see if group membership (C for control vs. E for experimental) has an effect on IQ.
+
+As usual, it is a good idea to begin with a plot. I included labels, a main title, rotated the numbers on the y axis and created the plot in hot pink just because I felt like it. 
+
+```{r}
+boxplot(IQ ~ Group, xlab = "Group", ylab = "IQ", las = 1, main = "IQ as a function of Group", col = "hotpink")
+```
+
+The full description of the wilcoxon test is as follows.
+
+```{r}
+wilcox.test(IQ ~ Group, mu=0, alt = "two.sided", conf.int = T, conf.level = 0.95, paired = F, exact = T, correct = T)
+```
+
+
+The variables we are considering are IQ as determined by group membership, the null hypothesis difference between the groups is assumed to be 0 (mu=0), we are doing a two sided test, we want to calculate a 95% confidence interval, the observations are not paired, we want to calculate an exact p value, and apply a correction for continuity.
+
+With a p value of 0.005 it seems that whatever we did to group E resulted in higher measured IQ scores.

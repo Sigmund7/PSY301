@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>S Mann-Whitney U </title>
+      <link>/post/s-mann-whitney-u/</link>
+      <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/s-mann-whitney-u/</guid>
+      <description>## Warning: Missing column names filled in: &amp;#39;X3&amp;#39; [3], &amp;#39;X4&amp;#39; [4] The Mann-Whitney U test (also known as the Wilcoxon Rank Sum Test) is a useful alternative to the Independent Groups t when the assumptions of the t are not met. It is sensitive to tied ranks so is best used when the data set is relatively small or the measurements are sufficiently precise as to make duplicate scores unlikely.</description>
+    </item>
+    
+    <item>
       <title>T Wilcoxon Matched Pairs Signed Ranks Test</title>
       <link>/post/t-wilcoxon-matched-pairs-signed-ranks-test/</link>
       <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
@@ -19,7 +28,7 @@
       <guid>/post/t-wilcoxon-matched-pairs-signed-ranks-test/</guid>
       <description>Reference:Marin R Tutorial 4.5
 Data set: BloodPressure
-Read the data set in to R and attach it. ASs always, it is a good idea to produce a graphic so we can better visualize our data. A box plot is appropriate in this case.
+Read the data set in to R and attach it. As always, it is a good idea to produce a graphic so we can better visualize our data. A box plot is appropriate in this case.
 boxplot(Before, After) We may also want to see a summary of the data. I renamed it “BP” to save some typing.
 summary(BP) ## Subject Before After ## Min.</description>
     </item>

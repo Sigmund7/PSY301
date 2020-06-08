@@ -18,7 +18,7 @@ Reference:Marin R Tutorial 4.5
 Data set: BloodPressure
 
 Read the data set in to R and attach it.
-ASs always, it is a good idea to produce a graphic so we can better visualize our data. A box plot is appropriate in this case.
+As always, it is a good idea to produce a graphic so we can better visualize our data. A box plot is appropriate in this case.
 
 ```{r}
 boxplot(Before, After)

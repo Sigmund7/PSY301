@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>S Mann-Whitney U  | Slumdown</title>
+
+  <link rel="stylesheet" href=../../css/palette_dark.css />
+  
+  <link rel="stylesheet" href="../../css/et_book.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="S Mann-Whitney U ">
+<meta property="og:description" content="## Warning: Missing column names filled in: &#39;X3&#39; [3], &#39;X4&#39; [4] The Mann-Whitney U test (also known as the Wilcoxon Rank Sum Test) is a useful alternative to the Independent Groups t when the assumptions of the t are not met. It is sensitive to tied ranks so is best used when the data set is relatively small or the measurements are sufficiently precise as to make duplicate scores unlikely.">
+<meta property="og:image" content="">
+
+</head>
+
+
+  <body>
+    
+
+
+
+    <div class="main-content">
+      <nav>
+  <ul class="menu">
+    
+    <li><a href="../../">Home</a></li>
+    
+    <li><a href="../../about/">About</a></li>
+    
+    <li><a href="../../post/">Posts</a></li>
+    
+    <li><a href="../../project/">Projects</a></li>
+    
+    <li><a href="../../tags/">Tags</a></li>
+    
+  </ul>
+</nav>
+
+      <div>
+  <h1>S Mann-Whitney U</h1>
+  <h3>
+    by DocP, 08 Jun 2020
+  </h3>
+  <br><br>
+</div>
+
+
+      <main>
+        
+
+
+<pre><code>## Warning: Missing column names filled in: &#39;X3&#39; [3], &#39;X4&#39; [4]</code></pre>
+<p>The Mann-Whitney U test (also known as the Wilcoxon Rank Sum Test) is a useful alternative to the Independent Groups t when the assumptions of the t are not met. It is sensitive to tied ranks so is best used when the data set is relatively small or the measurements are sufficiently precise as to make duplicate scores unlikely.</p>
+<p>Reference: Marin - R Tutorial 4.3</p>
+<p>We will use the MWU data set for our example. You should load and attach the data from D2L before running any of the R code below. We will be testing to see if group membership (C for control vs. E for experimental) has an effect on IQ.</p>
+<p>As usual, it is a good idea to begin with a plot. I included labels, a main title, rotated the numbers on the y axis and created the plot in hot pink just because I felt like it.</p>
+<pre class="r"><code>boxplot(IQ ~ Group, xlab = &quot;Group&quot;, ylab = &quot;IQ&quot;, las = 1, main = &quot;IQ as a function of Group&quot;, col = &quot;hotpink&quot;)</code></pre>
+<p><img src="../../post/2020-06-08-s-mann-whitney-u_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>The full description of the wilcoxon test is as follows.</p>
+<pre class="r"><code>wilcox.test(IQ ~ Group, mu=0, alt = &quot;two.sided&quot;, conf.int = T, conf.level = 0.95, paired = F, exact = T, correct = T)</code></pre>
+<pre><code>## 
+##  Wilcoxon rank sum exact test
+## 
+## data:  IQ by Group
+## W = 8, p-value = 0.005512
+## alternative hypothesis: true location shift is not equal to 0
+## 95 percent confidence interval:
+##  -24  -5
+## sample estimates:
+## difference in location 
+##                    -14</code></pre>
+<p>The variables we are considering are IQ as determined by group membership, the null hypothesis difference between the groups is assumed to be 0 (mu=0), we are doing a two sided test, we want to calculate a 95% confidence interval, the observations are not paired, we want to calculate an exact p value, and apply a correction for continuity.</p>
+<p>With a p value of 0.005 it seems that whatever we did to group E resulted in higher measured IQ scores.</p>
+
+      </main>
+
+      <footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+
+  <script>
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  </script>
+
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <br/><br/>
+  © Randy Potter 2020 | <a href="https://github.com/Sigmund7">Github</a>
+  <br/><br/>
+  
+</footer>
+
+
+    </div>
+  </body>
+</html>
