@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>O Binomial Distribution | Slumdown</title>
+
+  <link rel="stylesheet" href=../../css/palette_dark.css />
+  
+  <link rel="stylesheet" href="../../css/et_book.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="O Binomial Distribution">
+<meta property="og:description" content="The Binomial Distribution is a distribution of probabilities where there is a known number of trials, a known number of desired outcomes (often referred to as “successes”), and a known and stable probability of success. We are most often interested in the probability of a certain outcome or the probability of any of several outcomes for these distributions.
+The two R functions of most use to us in dealing with binomial distributions are “dbinom” and “pbinom” functions">
+<meta property="og:image" content="">
+
+</head>
+
+
+  <body>
+    
+
+
+
+    <div class="main-content">
+      <nav>
+  <ul class="menu">
+    
+    <li><a href="../../">Home</a></li>
+    
+    <li><a href="../../about/">About</a></li>
+    
+    <li><a href="../../post/">Posts</a></li>
+    
+    <li><a href="../../project/">Projects</a></li>
+    
+    <li><a href="../../tags/">Tags</a></li>
+    
+  </ul>
+</nav>
+
+      <div>
+  <h1>O Binomial Distribution</h1>
+  <h3>
+    by Doc P, 09 Jun 2020
+  </h3>
+  <br><br>
+</div>
+
+
+      <main>
+        
+
+
+<p>The Binomial Distribution is a distribution of probabilities where there is a known number of trials, a known number of desired outcomes (often referred to as “successes”), and a known and stable probability of success. We are most often interested in the probability of a certain outcome or the probability of any of several outcomes for these distributions.</p>
+<p>The two R functions of most use to us in dealing with binomial distributions are “dbinom” and “pbinom” functions</p>
+<p>“dbinom” finds the probability of a particular outcome for a given set of circumstances. For the following examples we will assume that we are rolling a regular six sided die 20 times and that we have defined a success as a result of three on the die. For example, we might roll a six sided die twenty times and want to know the probability that we will see exactly 5 results of three. The number of trials is 20, the number of “successes” is 5, and the probability of a success is 1/6.</p>
+<p>We should code this into R as follows:
+dbinom(x=5, size=20, prob=1/6)</p>
+<pre class="r"><code>dbinom(x = 5, size = 20, prob = 1/6)</code></pre>
+<pre><code>## [1] 0.1294103</code></pre>
+<p>More often we are interested in knowing the probability of several different events. Obviously one way to find this would be to calculate each individual probability and add them up.</p>
+<p>If, for example, we want to know the probability of rolling 4 or fewer threes (p(x &lt;= 4)), we could use this code:</p>
+<pre class="r"><code>dbinom(x=0:4, size = 20, prob = 1/6)</code></pre>
+<pre><code>## [1] 0.02608405 0.10433621 0.19823881 0.23788657 0.20220358</code></pre>
+<p>The colon tells R to begin with zero and calculate the probability for every value up to and including 4.</p>
+<p>We could also get R to do the addition for us with the following code:</p>
+<pre class="r"><code>sum( dbinom(x=0:4, size = 20, prob = 1/6))</code></pre>
+<pre><code>## [1] 0.7687492</code></pre>
+<p>Alternatively, we could use the “pbinom” command:</p>
+<pre class="r"><code>pbinom(q=4, size = 20, prob = 1/6, lower.tail = T)</code></pre>
+<pre><code>## [1] 0.7687492</code></pre>
+<p>“lower.tail” tells R that we want 4 or fewer threes. If we set “lower.tail = F” we would get everything from 5 to 20 inclusive. Note that if we evaluate the upper tail that the value of “q” is not included in the calculations.</p>
+<pre class="r"><code>pbinom(q=4, size = 20, prob = 1/6, lower.tail = F)</code></pre>
+<pre><code>## [1] 0.2312508</code></pre>
+<p>Either way works, you just need to find the one that seems to make the most sense to you and stick with it. One advantage of dbinom is that you can find the probability associated with a section in the middle of the distribution. If, for example, we wanted to know the probability of 5 to 9 threes we could use the following code:</p>
+<pre class="r"><code>dbinom(x=5:9, size=20, prob=1/6)</code></pre>
+<pre><code>## [1] 0.129410292 0.064705146 0.025882058 0.008411669 0.002243112</code></pre>
+<p>or, if we want R to do the addition for us:</p>
+<pre class="r"><code>sum(dbinom(x=5:9, size=20, prob=1/6))</code></pre>
+<pre><code>## [1] 0.2306523</code></pre>
+
+      </main>
+
+      <footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+
+  <script>
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  </script>
+
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <br/><br/>
+  © Randy Potter 2020 | <a href="https://github.com/Sigmund7">Github</a>
+  <br/><br/>
+  
+</footer>
+
+
+    </div>
+  </body>
+</html>

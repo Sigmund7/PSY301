@@ -6,10 +6,62 @@
     <description>Recent content in Posts on Slumdown</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>N Multiple Regression in R</title>
+      <link>/post/n-multiple-regression-in-r/</link>
+      <pubDate>Tue, 09 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/n-multiple-regression-in-r/</guid>
+      <description>Multiple Linear Regression (R Tutorial 5.3)
+Simply put, multiple regression is a technique which allows us to use more than one predictor variable with a single predicted variable. Multiple regression is beyond the scope of this course but it is fairly easy to perform in R. These notes might come in handy if you ever take a more advanced statistics course and want to do a multiple regression analysis.</description>
+    </item>
+    
+    <item>
+      <title>O Binomial Distribution</title>
+      <link>/post/o-binomial-distribution/</link>
+      <pubDate>Tue, 09 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/o-binomial-distribution/</guid>
+      <description>The Binomial Distribution is a distribution of probabilities where there is a known number of trials, a known number of desired outcomes (often referred to as “successes”), and a known and stable probability of success. We are most often interested in the probability of a certain outcome or the probability of any of several outcomes for these distributions.
+The two R functions of most use to us in dealing with binomial distributions are “dbinom” and “pbinom” functions</description>
+    </item>
+    
+    <item>
+      <title>P Normal Distribution</title>
+      <link>/post/p-normal-distribution/</link>
+      <pubDate>Tue, 09 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/p-normal-distribution/</guid>
+      <description>Reference: Marin video 3.3
+The function “pnorm” will return the probability associated with any X value in a normally distributed population of scores. For example the probability of obtaining a score of 70 or less - p(x&amp;lt;=70) - from a population with a mean mu=75 and standard deviation sigma=5 would require the following R code:
+pnorm(q =70, mean = 75, sd = 5, lower.tail=T) ## [1] 0.1586553 The result (0.</description>
+    </item>
+    
+    <item>
+      <title>Q t tests with R</title>
+      <link>/post/q-t-tests-with-r/</link>
+      <pubDate>Tue, 09 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/q-t-tests-with-r/</guid>
+      <description>Reference: Marin videos 3.4, 4.1, 4.2, and 4.4
+Reading the output from a t test. The “t.test” command produces a table similar to the following. This example uses a two group t test and assumes that the groups have equal variance. We will discuss these issues further when we consider the Independent Groups t.
+t.test(LungCap~Smoke, mu=0, alternative = &amp;quot;two.sided&amp;quot;, conf.int = 0.95, var.eq = T, paired = F) ## ## Two Sample t-test ## ## data: LungCap by Smoke ## t = -2.</description>
+    </item>
+    
+    <item>
+      <title>R Chi Squared </title>
+      <link>/post/r-chi-squared/</link>
+      <pubDate>Tue, 09 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/r-chi-squared/</guid>
+      <description>Reference: Marin (R Tutorial 4.7) Chi Squared is a very useful test for evaluating categorical data. Perhaps the greatest difficulty students have with it is determining which version should be used in a particular situation and how to enter the data into R. We will do several examples, showing various ways to evluate information.
+Single Classification Chi Squared We use the single classification test when we have only a single variable of interest (even though there may be several levels of that variable).</description>
+    </item>
     
     <item>
       <title>S Mann-Whitney U </title>

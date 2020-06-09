@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Q t tests with R | Slumdown</title>
+
+  <link rel="stylesheet" href=../../css/palette_dark.css />
+  
+  <link rel="stylesheet" href="../../css/et_book.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="Q t tests with R">
+<meta property="og:description" content="Reference: Marin videos 3.4, 4.1, 4.2, and 4.4
+Reading the output from a t test. The “t.test” command produces a table similar to the following. This example uses a two group t test and assumes that the groups have equal variance. We will discuss these issues further when we consider the Independent Groups t.
+t.test(LungCap~Smoke, mu=0, alternative = &quot;two.sided&quot;, conf.int = 0.95, var.eq = T, paired = F) ## ## Two Sample t-test ## ## data: LungCap by Smoke ## t = -2.">
+<meta property="og:image" content="">
+
+</head>
+
+
+  <body>
+    
+
+
+
+    <div class="main-content">
+      <nav>
+  <ul class="menu">
+    
+    <li><a href="../../">Home</a></li>
+    
+    <li><a href="../../about/">About</a></li>
+    
+    <li><a href="../../post/">Posts</a></li>
+    
+    <li><a href="../../project/">Projects</a></li>
+    
+    <li><a href="../../tags/">Tags</a></li>
+    
+  </ul>
+</nav>
+
+      <div>
+  <h1>Q t tests with R</h1>
+  <h3>
+    by Doc P, 09 Jun 2020
+  </h3>
+  <br><br>
+</div>
+
+
+      <main>
+        
+
+
+<p>Reference: Marin videos 3.4, 4.1, 4.2, and 4.4</p>
+<div id="reading-the-output-from-a-t-test." class="section level3">
+<h3>Reading the output from a t test.</h3>
+<p>The “t.test” command produces a table similar to the following. This example uses a two group t test and assumes that the groups have equal variance. We will discuss these issues further when we consider the Independent Groups t.</p>
+<pre class="r"><code>t.test(LungCap~Smoke, mu=0, alternative = &quot;two.sided&quot;, conf.int = 0.95, var.eq = T, paired = F)</code></pre>
+<pre><code>## 
+##  Two Sample t-test
+## 
+## data:  LungCap by Smoke
+## t = -2.7399, df = 723, p-value = 0.006297
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -1.5024262 -0.2481063
+## sample estimates:
+##  mean in group no mean in group yes 
+##          7.770188          8.645455</code></pre>
+<p>The first line identifies the type of test that was run - Two Sample t-test - also known as Student’s t. The next line identifies the variables that were used in the analysis - “LungCap” as a function of “Smoke”. The next line gives the actual calculated value of t, the df “degrees of freedom”, and the associated p value. As p (0.006297) is less than 0.05 we could reject our null hypothesis at the 0.05 alpha level. The next line states the alternative hypothesis that was tested in the analysis. As we are able to reject the null hypotesis, we would accept this alternative. If the calculated p value was larger than 0.05 we would retain the null. The next two lines give the lower and upper bounds of the 95% confidence interval. The final three lines identify the actual calculated means for the Non-smokers (mean in group no) and the smokers (mean in group yes). With minor variations we will see this same information for all of the t tests.</p>
+</div>
+<div id="one-sample-t-and-confidence-interval" class="section level3">
+<h3>One sample t and confidence interval</h3>
+<p>The one sample t test is used when you want to compare the average of a single group with a hypothesized population mean.</p>
+<p>We will use the LungCapacityData set for this example and test the Null hypothesis that the average lung capacity (LungCap) is equal to eight (mu = 8) against the alternative that the average LungCap is not equal to eight. As this is a non-directional hypothesis pair we will specify that our alternative hypothesis is “two.sided”. We will also calculate a 95% confidence interval.</p>
+<pre class="r"><code>t.test(LungCap, mu=8, alternative = &quot;two.sided&quot;, conf.level = 0.95)</code></pre>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  LungCap
+## t = -1.3842, df = 724, p-value = 0.1667
+## alternative hypothesis: true mean is not equal to 8
+## 95 percent confidence interval:
+##  7.669052 8.057243
+## sample estimates:
+## mean of x 
+##  7.863148</code></pre>
+<p>“two.sided”&quot; is the default method for the t test as is the 95% confidence interval. We can change either by replacing “two.sided” with “greater” or “less” and 0.95 with whatever CI value we want.</p>
+<p>We can make the alternative “less” and calculate the 99% CI as follows.</p>
+<pre class="r"><code>t.test(LungCap, mu=8, alternative = &quot;less&quot;, conf.level = 0.99)</code></pre>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  LungCap
+## t = -1.3842, df = 724, p-value = 0.08336
+## alternative hypothesis: true mean is less than 8
+## 99 percent confidence interval:
+##      -Inf 8.093651
+## sample estimates:
+## mean of x 
+##  7.863148</code></pre>
+<p>You may want to store results in a variable so you can then access the results using the “attributes” command.</p>
+<pre class="r"><code>values &lt;- t.test(LungCap, mu=8, alternative = &quot;two.sided&quot;, conf.level = 0.95)
+values</code></pre>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  LungCap
+## t = -1.3842, df = 724, p-value = 0.1667
+## alternative hypothesis: true mean is not equal to 8
+## 95 percent confidence interval:
+##  7.669052 8.057243
+## sample estimates:
+## mean of x 
+##  7.863148</code></pre>
+<pre class="r"><code>attributes(values)</code></pre>
+<pre><code>## $names
+##  [1] &quot;statistic&quot;   &quot;parameter&quot;   &quot;p.value&quot;     &quot;conf.int&quot;    &quot;estimate&quot;   
+##  [6] &quot;null.value&quot;  &quot;stderr&quot;      &quot;alternative&quot; &quot;method&quot;      &quot;data.name&quot;  
+## 
+## $class
+## [1] &quot;htest&quot;</code></pre>
+</div>
+<div id="two-sample-t" class="section level3">
+<h3>two sample t</h3>
+<p>The two sample t is used when we have two groups of subjects and each subject contributes a single score. This is also known as an “Independent Groups t”, as the scores in each group are “Independent” or unassociated with the other group.</p>
+<p>We will again use the LungCapData, testing the null hypothesis (Ho) that lung capacity of Smokers is equal to that of Non-smokers, using a two sided test, a confidence interval of 95%, and we will assume that the variances of the two groups are not equal (var.eq = F). “paired = F” tells R that this is an independent groups design.</p>
+<pre class="r"><code>t.test(LungCap~Smoke, mu=0, alternative = &quot;two.sided&quot;, conf.int = 0.95, var.eq = F, paired = F)</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  LungCap by Smoke
+## t = -3.6498, df = 117.72, p-value = 0.0003927
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -1.3501778 -0.4003548
+## sample estimates:
+##  mean in group no mean in group yes 
+##          7.770188          8.645455</code></pre>
+<p>As all the above parameters are defaults and do not really need to be entered if they are what we want to use (and they usually are).</p>
+<pre class="r"><code>t.test(LungCap~Smoke)</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  LungCap by Smoke
+## t = -3.6498, df = 117.72, p-value = 0.0003927
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -1.3501778 -0.4003548
+## sample estimates:
+##  mean in group no mean in group yes 
+##          7.770188          8.645455</code></pre>
+<p>will give the same results. I like to specify the parameters in case I revisit the analysis later, after I have forgotten exactly what I specified.</p>
+<p>If you compare the results of this t test with our very first example you will see that, although the variables are the same (LungCap and Smoke) the results are somewhat different. The difference is due to the “var.eq” parameter. If var.eq is set to true, a Student’s t test is calculated. If var.eq is set to false, a Welsh two sample t test is calculated. Most text books teach the Student’s t, as it is a bit easier to calculate. Many statisticians, however, prefer the Welsh two sample t if the variability of each group is different. The Welsh test is the default in R (var.eq = F). To calculate the Student’s t you must specify var.eq = T.</p>
+</div>
+<div id="paired-aka-repeated-measures-t" class="section level3">
+<h3>Paired (aka Repeated Measures) t</h3>
+<p>The paired, or repeated measures, t is used when a single group of subjects each contributes two scores to the analysis. Usually this is a pre-test, post-test design, where each subject is tested before and after receiving some treatment.</p>
+<p>For this example we eill use the “BloodPressure” data set, which I have already imported and attached. It is the recorded blood pressure of twenty-five subjects before and after a relaxation exercise. I named the variables “Before” and “After” becuase I wasn’t feeling very inventive, but you can use any names you want for your data.</p>
+<pre class="r"><code>t.test(Before, After, mu = 0, alternative = &quot;two.sided&quot;, conf.level = 0.95, paired = T)</code></pre>
+<pre><code>## 
+##  Paired t-test
+## 
+## data:  Before and After
+## t = 3.8882, df = 24, p-value = 0.0006986
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##   3.753515 12.246485
+## sample estimates:
+## mean of the differences 
+##                       8</code></pre>
+<p>Note that “paired = T” is specified in the code. This must be done to let R know that this is a single group of subjects tested two times rather than two independent groups. The code will actually run with “paired = F”, but the results will be incorrect.</p>
+</div>
+
+      </main>
+
+      <footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+
+  <script>
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  </script>
+
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <br/><br/>
+  © Randy Potter 2020 | <a href="https://github.com/Sigmund7">Github</a>
+  <br/><br/>
+  
+</footer>
+
+
+    </div>
+  </body>
+</html>

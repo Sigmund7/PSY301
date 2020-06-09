@@ -1,0 +1,66 @@
+---
+title: N Multiple Regression in R
+author: Doc P
+date: '2020-06-09'
+slug: n-multiple-regression-in-r
+categories: []
+tags: []
+---
+ ```{r, echo = FALSE, message=FALSE}
+  library(readr)
+  LCD<- read_csv("LungCapData.csv")
+  attach(LCD)
+  ```
+
+Multiple Linear Regression (R Tutorial 5.3)
+
+Simply put, multiple regression is a technique which allows us to use more than one predictor variable with a single predicted variable. Multiple regression is beyond the scope of this course but it is fairly easy to perform in R. These notes might come in handy if you ever take a more advanced statistics course and want to do a multiple regression analysis.
+
+First, import and attach the LungCapData.
+
+To perform a multiple regression we use the lm() command:
+
+ The command "model1 <- lm(LungCap ~ Age + Height)" tells R to create a model predicting
+lung capacity using Age and Height as the predictor variables, while "summary(model1)" will generate a summary. The item “Multiple R-squared” is generally the item of most interest. The F- statistic and p-value may also be of interest, as may be the Residual standard error.
+
+```{r}
+model1 <- lm(LungCap ~ Age + Height)
+summary(model1)
+```
+
+We can also conduct a Pearson’s r to test the relationship between Age and Height.
+
+```{r}
+cor(Age, Height, method = "pearson")
+```
+
+
+If this value is substantially different from zero it tells us that we should not assume the two variables to be independent.
+
+Finally, we can determine a confidence interval for the relationship between age and height:
+
+```{r}
+confint(model1, conf.level = 0.95)
+```
+
+We can also create a model with more than two variables:
+
+```{r}
+model2 <- lm(LungCap ~ Age + Height + Smoke + Gender + Caesarean) 
+```
+
+creates a model using all of the variables in the Lung Capacity date set.
+
+```{r}
+summary(model2)
+```
+
+will create a summary of this model. Be cautious with models containing many variables as the effect of non-independence can become problematic.
+
+"plot(model2)" will create a series of scatterplots of the actual scores versus the predicted scores
+
+```{r}
+plot(model2)
+```
+
+Once again, the use of multiple regression is well beyond the scope of our course.  It is easy to do with R but can be difficult to interpret.

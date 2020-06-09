@@ -1,0 +1,41 @@
+---
+title: P Normal Distribution
+author: Doc P
+date: '2020-06-09'
+slug: p-normal-distribution
+categories: []
+tags: []
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Reference: Marin video 3.3
+
+The function "pnorm" will return the probability associated with any X value in a normally distributed population of scores.
+For example the probability of obtaining a score of 70 or less - p(x<=70) - from a population with a mean mu=75 and standard deviation sigma=5 would require the following R code:
+
+```{r}
+pnorm(q =70, mean = 75, sd = 5, lower.tail=T)
+```
+
+The result (0.1586553) is the proportion of scores that will fall at or below the identified q score.  If we want a percentage this value should be multiplied by 100.
+
+"lower.tail = T" tells R that we want the probability for 70 or any lower score.
+If, instead we wanted to know the probability of obtaining a score or 85 or more - p(x>=85) - we would use the following code:
+
+```{r}
+pnorm(q =85, mean = 75, sd = 5, lower.tail=F)
+```
+
+"lower.tail = F" tells R that we want the probability associated with the upper tail, that is everything from 85 on up.
+
+"qnorm" is used to calculate quantiles or percentiles for a normal distribution. If we want to know what score falls at the 25th percentile we would use the following code:
+
+```{r}
+qnorm (p=0.25, mean=75, sd=5, lower.tail=T)
+```
+
+Note that "qnorm" returns a score associated with a location while "pnorm" returns a probability of obtaining a score above (or below) a particular location.
+
+While these two commands are the only ones we will need to do normal distribution calculations, we sometimes need to add or subtract different portions of the distribution to get the result we want.  We will work several examples in class.
