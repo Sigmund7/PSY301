@@ -6,6 +6,7 @@ slug: g-additional-information-on-graphing
 categories: []
 tags: []
 ---
+
 Many other types of graphs can be created within R. Without getting too detailed here are some notes on several types you might want to use and some of the options that can be applied. If you would like to see examples, each of the sections is keyed to the Marin video that addresses the particular type of plot. Marin uses the LungCapData for his examples. It is probably best to follow the videos so you can see the results, as the sample code below is a bit cryptic because it is not keyed to a particular data set. It is, however, a good reference to remind you all that can be done to modify the various types of visual presentations.
 
 
