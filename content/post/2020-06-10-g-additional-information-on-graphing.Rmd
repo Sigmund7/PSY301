@@ -1,0 +1,177 @@
+---
+title: G Additional INformation on Graphing
+author: Doc P
+date: '2020-06-10'
+slug: g-additional-information-on-graphing
+categories: []
+tags: []
+---
+Many other types of graphs can be created within R. Without getting too detailed here are some notes on several types you might want to use and some of the options that can be applied. If you would like to see examples, each of the sections is keyed to the Marin video that addresses the particular type of plot. Marin uses the LungCapData for his examples. It is probably best to follow the videos so you can see the results, as the sample code below is a bit cryptic because it is not keyed to a particular data set. It is, however, a good reference to remind you all that can be done to modify the various types of visual presentations.
+
+
+###Bar Charts (2.1)
+
+Useful for categorical variables “variable” in the statement below is the variable we want to plot. We need, first to put it in a table so R can draw the plot. "myvariable1" is just the name I chose for the table.
+
+**myvariable1 <- table(variable)**
+
+**barplot(myvariable1)**
+
+To get relative frequency (instead of just a count) use 
+
+**table(variable)/number **
+
+where number is the total number of observations
+**myproportion <- table(variable)/number**
+
+**barplot(myproportion)**
+
+**main, xlab, ylab, las** can all be used as was shown in the previous crib sheet
+
+**names.arg = c(what names you want)** can also be added if you want to change the default names of the variables.
+
+
+###Pie chart (2.1)
+
+Pie charts are not often used in statistical analysis but are common in news reports
+
+first, create a table:
+
+**variabletab <- table(variable)**
+
+then plot the pie chart of variabletab
+
+**pie(variabletab)**
+
+will produce a pie chart of the variable named. You can add a box around the plot with
+
+**box()**
+
+
+###Boxplots 2.2 and 2.3
+
+Boxplots are used for numeric variables.
+
+**boxplot(numeric variable)**
+
+**quantile(numeric variable, probs=c(0, 0,25, 0.5, 0.75, 1)** 
+
+will return the values for the components of the plot (the upper and lower limits of the box as well as the upper and lower limits of the whiskers).
+
+**main, xlab, ylab, las**, can all be used as was shown previously
+
+**ylim** will reset the limits for the y variable:
+
+**ylim(lower limit, upper limit)**
+
+**boxplot(Var1~Var2)**
+
+will produce a box plot of Var1 broken down by Var2 
+
+**boxplot(Var1[Var2==“One thing”], Var1(Var2==“The other thing”]**
+
+will do the same thing.
+
+
+###Histograms 2.4
+
+Histograms are used for numeric variables
+
+**hist(Variable)**
+
+**hist(Variable, freq = F)**
+
+will give relative frequency as will
+
+**hist(Variable, prob = T)**
+
+**ylim(startvalue, endvalue)**
+
+to set y limits
+
+**breaks=N**
+
+for number of break points or bins
+
+**breaks=c(a,b,c,...n)**
+
+will break at specific points
+
+**breaks=seq(from=begin number, to=end number, by= increment)**
+
+another way 
+
+**lines(density(Variable)**
+
+adds a density plot. NOTE: Y axis must be Density, not Frequency.
+
+**col, lwd, main, xlab, ylab** can all be added also.
+
+
+###Stem and Leaf (2.5)
+
+Stem and Leaf plots are used for numeric variables.  (I prefer to create them by hand, as they are best used for relatively small data sets and getting R to do them just the way you want can be difficult.)
+
+**stem(variable, scale = number)**
+
+
+###Bar Charts and Mosaic Plots (2.6)
+
+Bar charts and mosiac plots are used when you have 2 categorical variables
+
+First, you need to create a table for the two variables
+
+**Table 1<-table(Var1,Var2)**
+
+**barplot(Table1)**
+
+produces a stacked barplot (this is the default) 
+
+**barplot(Table1, beside = T)**
+
+produces side by side bar plots
+
+**barplot(Table1, beside = T, legend.text = T)**
+
+for default legend 
+
+**barplot(Table1, beside = T, legend.text =c(“Name1”,”Name2”)** 
+
+produces a custom legend
+
+**main, xlab, ylab, and las** may also be added to the command with the usual results
+
+**col** may also be added for color
+
+**mosaicplot(Table1)**
+
+produces a mosaic plot
+
+all of the above options may also be added.
+
+
+###Scatterplots (2.7)
+
+Scatterplots are used when you have two quantitative variables
+
+**plot(Var1, Var2)**
+
+var1 on x axis, var2 on Y
+
+**xlab, ylab, and main** may be added
+
+range of the variables may be altered with xlim and ylim (FORM: **xlim=c(lower.value, upper.value)**
+
+size of plotting character can be changed with **cex** argument
+
+plotting character can be changed with **pch** argument
+
+**co**l can be added
+
+**abline(lm(var1, var2))**
+
+will add the regression line
+
+**col** may be specified for the line color
+
+**lty** and **lwd** for line type and line width, may also be specified

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>F Graphing in R | Slumdown</title>
+
+  <link rel="stylesheet" href=../../css/palette_dark.css />
+  
+  <link rel="stylesheet" href="../../css/et_book.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="F Graphing in R">
+<meta property="og:description" content="This is a very brief introduction to Graphing using R. For a much more thorough look at the capabilities of R refer to series 2 of the R tutorial videos by Mike Marin. (https://www.youtube.com/playlist?list=PLqzoL9-eJTNBDdKgJgJzaQcY6OXmsXAHU)
+One of the best qualities of R is that it has comprehensive and high quality graphics capabilities. Some of these features require that you download extensions to the basic package, but many are available in the standard version of R.">
+<meta property="og:image" content="">
+
+</head>
+
+
+  <body>
+    
+
+
+
+    <div class="main-content">
+      <nav>
+  <ul class="menu">
+    
+    <li><a href="../../">Home</a></li>
+    
+    <li><a href="../../about/">About</a></li>
+    
+    <li><a href="../../post/">Posts</a></li>
+    
+    <li><a href="../../project/">Projects</a></li>
+    
+    <li><a href="../../tags/">Tags</a></li>
+    
+  </ul>
+</nav>
+
+      <div>
+  <h1>F Graphing in R</h1>
+  <h3>
+    by Doc P, 10 Jun 2020
+  </h3>
+  <br><br>
+</div>
+
+
+      <main>
+        
+
+
+<p>This is a very brief introduction to Graphing using R. For a much more thorough look at the capabilities of R refer to series 2 of the R tutorial videos by Mike Marin. (<a href="https://www.youtube.com/playlist?list=PLqzoL9-eJTNBDdKgJgJzaQcY6OXmsXAHU" class="uri">https://www.youtube.com/playlist?list=PLqzoL9-eJTNBDdKgJgJzaQcY6OXmsXAHU</a>)</p>
+<p>One of the best qualities of R is that it has comprehensive and high quality graphics capabilities. Some of these features require that you download extensions to the basic package, but many are available in the standard version of R. We will stick with things that can be done with the standard version.</p>
+<p>First you should download the data set Unenrolled.csv from the DATA folder on our D2L site, and move it to the folder on your computer or flash drive where you keep your data. Then open RStudio, which automatically opens R. (Note: These data are actually information from a group of students who were recently but not currently enrolled at Clarion as Psychology BA, Psychology BS, or SOC/PSY BA students.</p>
+<p>Next,read the file into R. This can be done in any of several ways: you can set your working directory to your DATA folder and enter the following code into R.</p>
+<p>Unenrolled&lt;-read.csv(“Unenrolled.csv”)</p>
+<p>Note that I chose to keep the file name Unenrolled. You can use any file name you want but it should be descriptive enough so you will remember which file is which as you work through your analysis and create subsets. For right now, don’t worry about why you are doing some of the things (like using that funny “&lt;-“ symbol) just do them. By the way &lt;- is the left arrow followed by the dash on your keyboard. Be picky. R cares about punctuation, capitalization and the like. UNENROLLED is not the same as Unenrolled.</p>
+<p>Alternatively you could use the following code:</p>
+<p>Unenrolled&lt;-read.csv(file.choose())</p>
+<p>which will open a drop down box allowing you to navigate to the folder and file you want.</p>
+<p>Finally, and easiest from my perspective, you can simply use the “Import Dataset” command from the “Environment” window of RStudio. This is the upper right hand window if no one has rearranged your RStudio display. This also will open a drop down box allowing you to navigate to your folder and file. For right now, use the “From Text (base)” command from the dropdown menu.</p>
+<p>Once the file is read into R you should “attach” the data set. This allows R to find variables within the data set when you specify them in commands. There are other ways to identify variables but, for our purposes, I find that “attach” is the easiest.</p>
+<p>attach(Unenrolled)</p>
+<p>Now type</p>
+<p>Unenrolled</p>
+<p>into the R console (lower left hand of the RStudio display)</p>
+<p>This will list the data set. If there isn’t enough room to list all the variables across on your display, some may be moved below the others, but it should all be there. This step isn’t necessary but it does help to make sure that we have really imported the data we wanted to and that it is all as it should be.</p>
+<p>Now we can do some graphing.</p>
+<p>The basic graphing command in R is “plot”.</p>
+<p>Type this code:</p>
+<pre class="r"><code>Tab &lt;- table( MAJOR, RISK)
+
+plot(Tab)</code></pre>
+<p><img src="../../post/2020-06-10-f-graphing-in-r_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>a stacked bar graph which looks like the one above should appear in the lower right window of RStudio.</p>
+<p>MAJOR and RISK are both “categorical variables”, meaning that they are not numbers but just classifications. By default R puts things in alphabetical order so we have “High, Low, Medium” along the Y axis. We probably don’t want it that way and will learn to change that later but for now, let’s move on to another type of plot.</p>
+<p>Type this code:</p>
+<pre class="r"><code>plot(GPA, EARNED_CREDITS)</code></pre>
+<p><img src="../../post/2020-06-10-f-graphing-in-r_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>This time we got a “scatter plot” with GPA on the X axis, EARNED_CREDITS on the Y axis, and a point for each person in the data set.</p>
+<p>Now try:</p>
+<pre class="r"><code>plot( EARNED_CREDITS, GPA)</code></pre>
+<p><img src="../../post/2020-06-10-f-graphing-in-r_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>which plots the same information with EARNED.CREDITS on the X axis and GPA on the Y.</p>
+<p>Now try:</p>
+<pre class="r"><code>boxplot(EARNED_CREDITS ~ MAJOR)</code></pre>
+<p><img src="../../post/2020-06-10-f-graphing-in-r_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>This produces a “box and whiskers” plot with the majors on the X axis and credits earned on the Y.</p>
+<p>Useful commands</p>
+<p>You may have noticed that some of the information on our graphs was not as nicely presented as we might want. On our plot of earned credits by major</p>
+<p>boxplot(EARNED_CREDITS ~ MAJOR)</p>
+<p>the numbers are printed up and down rather than left to right on the Y axis. Most people prefer to print the numbers on the Y axis horizontally rather than vertically. Let’s fix this.</p>
+<p>Type the following code:</p>
+<p>boxplot(EARNED_CREDITS ~ MAJOR, las = 1)</p>
+<p>Notice that the numbers on the Y axis have turned to make them more readable.</p>
+<p>We may also want to add labels to the axes. Type this code</p>
+<p>boxplot(EARNED_CREDITS ~ MAJOR, xlab = “Major”, ylab = “Credits Earned”)</p>
+<p>We now have labels on the axes, but our numbers have returned to the vertical orientation. That’s because our new command completely redrew the plot. We will fix this when we do the next step.</p>
+<p>Now try:</p>
+<p>boxplot(EARNED_CREDITS ~ MAJOR, xlab = “Major”, ylab = “Credits Earned”, las = 1, main = “Boxplot of Credits Earned by Major”)</p>
+<p>This produces a plot with a title, labels on both axes, and the numbers printed horizontally.</p>
+<p>There are a lot more things that R can do with graphs. Some are mentioned in the Marin video on graphing and some will come up as we work through examples during the semester. For now, I think you have a basic grasp of some of the more useful graphing commands in R.</p>
+
+      </main>
+
+      <footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+
+  <script>
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  </script>
+
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <br/><br/>
+  © Randy Potter 2020 | <a href="https://github.com/Sigmund7">Github</a>
+  <br/><br/>
+  
+</footer>
+
+
+    </div>
+  </body>
+</html>

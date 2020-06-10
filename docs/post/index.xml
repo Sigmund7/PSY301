@@ -12,6 +12,45 @@
     
     
     <item>
+      <title>F Graphing in R</title>
+      <link>/post/f-graphing-in-r/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/f-graphing-in-r/</guid>
+      <description>This is a very brief introduction to Graphing using R. For a much more thorough look at the capabilities of R refer to series 2 of the R tutorial videos by Mike Marin. (https://www.youtube.com/playlist?list=PLqzoL9-eJTNBDdKgJgJzaQcY6OXmsXAHU)
+One of the best qualities of R is that it has comprehensive and high quality graphics capabilities. Some of these features require that you download extensions to the basic package, but many are available in the standard version of R.</description>
+    </item>
+    
+    <item>
+      <title>G Additional INformation on Graphing</title>
+      <link>/post/g-additional-information-on-graphing/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/g-additional-information-on-graphing/</guid>
+      <description>Many other types of graphs can be created within R. Without getting too detailed here are some notes on several types you might want to use and some of the options that can be applied. If you would like to see examples, each of the sections is keyed to the Marin video that addresses the particular type of plot. Marin uses the LungCapData for his examples. It is probably best to follow the videos so you can see the results, as the sample code below is a bit cryptic because it is not keyed to a particular data set.</description>
+    </item>
+    
+    <item>
+      <title>H Data Entry in R</title>
+      <link>/post/h-data-entry-in-r/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/h-data-entry-in-r/</guid>
+      <description>In this lesson we will learn how to enter a simple data set into R and get some summary information about that data set. My daughter recently gave me an activity tracker hoping that I would get up off the couch and get some exercise. For the first week I recorded the following number of steps:
+Date 11/25 11/26 11/27 11/28 11/29 11/30 12/1
+Steps 16.8 7.1 8.3 10.8 14.</description>
+    </item>
+    
+    <item>
+      <title>I Saving Data</title>
+      <link>/post/i-saving-data/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/i-saving-data/</guid>
+      <description>One habit you should get into is to save a copy of everything you do for the class. If you are using the lab computers you will need to obtain a flash drive to save your files but I would recommend that you do so even if you are working with R on your own computer. Following are some suggestions for things you might want to save/keep as you are working on R problems.</description>
+    </item>
+    
+    <item>
       <title>J Entering and Saving Data</title>
       <link>/post/j-entering-and-saving-data/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>

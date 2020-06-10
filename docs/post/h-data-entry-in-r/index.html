@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>H Data Entry in R | Slumdown</title>
+
+  <link rel="stylesheet" href=../../css/palette_dark.css />
+  
+  <link rel="stylesheet" href="../../css/et_book.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="H Data Entry in R">
+<meta property="og:description" content="In this lesson we will learn how to enter a simple data set into R and get some summary information about that data set. My daughter recently gave me an activity tracker hoping that I would get up off the couch and get some exercise. For the first week I recorded the following number of steps:
+Date 11/25 11/26 11/27 11/28 11/29 11/30 12/1
+Steps 16.8 7.1 8.3 10.8 14.">
+<meta property="og:image" content="">
+
+</head>
+
+
+  <body>
+    
+
+
+
+    <div class="main-content">
+      <nav>
+  <ul class="menu">
+    
+    <li><a href="../../">Home</a></li>
+    
+    <li><a href="../../about/">About</a></li>
+    
+    <li><a href="../../post/">Posts</a></li>
+    
+    <li><a href="../../project/">Projects</a></li>
+    
+    <li><a href="../../tags/">Tags</a></li>
+    
+  </ul>
+</nav>
+
+      <div>
+  <h1>H Data Entry in R</h1>
+  <h3>
+    by Doc P, 10 Jun 2020
+  </h3>
+  <br><br>
+</div>
+
+
+      <main>
+        
+
+
+<p>In this lesson we will learn how to enter a simple data set into R and get some summary information about that data set.
+My daughter recently gave me an activity tracker hoping that I would get up off the couch and get some exercise. For the first week I recorded the following number of steps:</p>
+<p><strong>Date 11/25 11/26 11/27 11/28 11/29 11/30 12/1</strong></p>
+<p><strong>Steps 16.8 7.1 8.3 10.8 14.3 11.2 13.0</strong></p>
+<p><strong>Goal 12.0 12.3 12.0 10.7 10.7 10.9 10.9</strong></p>
+<p>Steps are recorded in 1000s to keep the numbers smaller and easier to follow. To enter these date into R:</p>
+<p>Open R or, better yet, R studio.</p>
+<p>At the prompt type the following into the “Console” pane:</p>
+<p><strong>Date &lt;- c(11/25, 11/26, 11/27, 11/28, 11/29, 11/30, 12/1)</strong></p>
+<p>Hit Enter, you should return to the prompt. If there is an error message you typed something incorrectly. R is very picky about spacing and capitalization, so check to see that you typed it exactly as the example.</p>
+<p>Next type:</p>
+<p><strong>Steps &lt;- c(16.8, 7.1, 8.3, 10.8, 14.3, 11.2, 13.1)</strong></p>
+<p>Hit Enter. Same rules apply.</p>
+<p>Next type:</p>
+<p><strong>Goal &lt;- c(12.0, 12.3, 12.0, 10.7, 10.7, 10.9, 10.9)</strong></p>
+<p>Hit Enter. Same rules again.</p>
+<p>At the prompt this time type:</p>
+<p><strong>Date</strong></p>
+<p>WOAH, that didn’t work. R turned the date 11/25 into a fraction and then a decimal. We will come back and fix that in a minute.</p>
+<p>Try it again with</p>
+<p><strong>Steps</strong> and <strong>Goal</strong>.</p>
+<p>To fix the date: Use the up arrow key on your keyboard to go back up to the line where you entered the dates. Now enter quotation marks around each date. This tells R that Date is a character variable rather than a number. Now it should look like this -</p>
+<p><strong>Date &lt;- c(“11/25”, “11/26”, “11/27”, “11/28”, “11/29”, “11/30”, “12/1”)</strong></p>
+<p>Try typing <strong>Date</strong> again at the prompt. You should now see a list of the dates with quotation marks around them.</p>
+<p>Just a bit more and we will quit for the time being.</p>
+<p>At the prompt type:</p>
+<p><strong>summary(Steps)</strong></p>
+<p>you should now see values for the minimum score, the 1st quartile score, the Median, the Mean, the 3rd Quartile score, and the maximum score. Don’t worry about what all of these mean at the moment.</p>
+<p>Now type:</p>
+<p><strong>summary(Goal)</strong></p>
+<p>R should return similar information for the variable Goal.</p>
+<p>Now try:</p>
+<p><strong>summary(Date)</strong></p>
+<p>This retuns a rather useless summary as R does not know how to perform a summary analysis on character data.</p>
+<p>While we have the data set up we can do a few more things.</p>
+<p>Type:</p>
+<p><strong>plot(Steps)</strong></p>
+<p>You should see a plot of Steps against an index that runs from 1 to 7. We will learn later how to replace the index with the date.</p>
+<p>Type:</p>
+<p><strong>plot(Steps, Goal)</strong></p>
+<p>This time you will see a somewhat different plot of Steps vs. Goal</p>
+<p>Just for fun, try:</p>
+<p><strong>plot(Goal, Steps)</strong></p>
+<p>This gives us the same information as the previous plot but with Goal on the horizontal axis and Steps on the vertical axis.</p>
+
+      </main>
+
+      <footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+
+  <script>
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  </script>
+
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <br/><br/>
+  © Randy Potter 2020 | <a href="https://github.com/Sigmund7">Github</a>
+  <br/><br/>
+  
+</footer>
+
+
+    </div>
+  </body>
+</html>

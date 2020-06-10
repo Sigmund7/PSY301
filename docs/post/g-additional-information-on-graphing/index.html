@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>G Additional INformation on Graphing | Slumdown</title>
+
+  <link rel="stylesheet" href=../../css/palette_dark.css />
+  
+  <link rel="stylesheet" href="../../css/et_book.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="G Additional INformation on Graphing">
+<meta property="og:description" content="Many other types of graphs can be created within R. Without getting too detailed here are some notes on several types you might want to use and some of the options that can be applied. If you would like to see examples, each of the sections is keyed to the Marin video that addresses the particular type of plot. Marin uses the LungCapData for his examples. It is probably best to follow the videos so you can see the results, as the sample code below is a bit cryptic because it is not keyed to a particular data set.">
+<meta property="og:image" content="">
+
+</head>
+
+
+  <body>
+    
+
+
+
+    <div class="main-content">
+      <nav>
+  <ul class="menu">
+    
+    <li><a href="../../">Home</a></li>
+    
+    <li><a href="../../about/">About</a></li>
+    
+    <li><a href="../../post/">Posts</a></li>
+    
+    <li><a href="../../project/">Projects</a></li>
+    
+    <li><a href="../../tags/">Tags</a></li>
+    
+  </ul>
+</nav>
+
+      <div>
+  <h1>G Additional INformation on Graphing</h1>
+  <h3>
+    by Doc P, 10 Jun 2020
+  </h3>
+  <br><br>
+</div>
+
+
+      <main>
+        
+
+
+<p>Many other types of graphs can be created within R. Without getting too detailed here are some notes on several types you might want to use and some of the options that can be applied. If you would like to see examples, each of the sections is keyed to the Marin video that addresses the particular type of plot. Marin uses the LungCapData for his examples. It is probably best to follow the videos so you can see the results, as the sample code below is a bit cryptic because it is not keyed to a particular data set. It is, however, a good reference to remind you all that can be done to modify the various types of visual presentations.</p>
+<p>###Bar Charts (2.1)</p>
+<p>Useful for categorical variables “variable” in the statement below is the variable we want to plot. We need, first to put it in a table so R can draw the plot. “myvariable1” is just the name I chose for the table.</p>
+<p><strong>myvariable1 &lt;- table(variable)</strong></p>
+<p><strong>barplot(myvariable1)</strong></p>
+<p>To get relative frequency (instead of just a count) use</p>
+<p><strong>table(variable)/number </strong></p>
+<p>where number is the total number of observations
+<strong>myproportion &lt;- table(variable)/number</strong></p>
+<p><strong>barplot(myproportion)</strong></p>
+<p><strong>main, xlab, ylab, las</strong> can all be used as was shown in the previous crib sheet</p>
+<p><strong>names.arg = c(what names you want)</strong> can also be added if you want to change the default names of the variables.</p>
+<p>###Pie chart (2.1)</p>
+<p>Pie charts are not often used in statistical analysis but are common in news reports</p>
+<p>first, create a table:</p>
+<p><strong>variabletab &lt;- table(variable)</strong></p>
+<p>then plot the pie chart of variabletab</p>
+<p><strong>pie(variabletab)</strong></p>
+<p>will produce a pie chart of the variable named. You can add a box around the plot with</p>
+<p><strong>box()</strong></p>
+<p>###Boxplots 2.2 and 2.3</p>
+<p>Boxplots are used for numeric variables.</p>
+<p><strong>boxplot(numeric variable)</strong></p>
+<p><strong>quantile(numeric variable, probs=c(0, 0,25, 0.5, 0.75, 1)</strong></p>
+<p>will return the values for the components of the plot (the upper and lower limits of the box as well as the upper and lower limits of the whiskers).</p>
+<p><strong>main, xlab, ylab, las</strong>, can all be used as was shown previously</p>
+<p><strong>ylim</strong> will reset the limits for the y variable:</p>
+<p><strong>ylim(lower limit, upper limit)</strong></p>
+<p><strong>boxplot(Var1~Var2)</strong></p>
+<p>will produce a box plot of Var1 broken down by Var2</p>
+<p><strong>boxplot(Var1[Var2==“One thing”], Var1(Var2==“The other thing”]</strong></p>
+<p>will do the same thing.</p>
+<p>###Histograms 2.4</p>
+<p>Histograms are used for numeric variables</p>
+<p><strong>hist(Variable)</strong></p>
+<p><strong>hist(Variable, freq = F)</strong></p>
+<p>will give relative frequency as will</p>
+<p><strong>hist(Variable, prob = T)</strong></p>
+<p><strong>ylim(startvalue, endvalue)</strong></p>
+<p>to set y limits</p>
+<p><strong>breaks=N</strong></p>
+<p>for number of break points or bins</p>
+<p><strong>breaks=c(a,b,c,…n)</strong></p>
+<p>will break at specific points</p>
+<p><strong>breaks=seq(from=begin number, to=end number, by= increment)</strong></p>
+<p>another way</p>
+<p><strong>lines(density(Variable)</strong></p>
+<p>adds a density plot. NOTE: Y axis must be Density, not Frequency.</p>
+<p><strong>col, lwd, main, xlab, ylab</strong> can all be added also.</p>
+<p>###Stem and Leaf (2.5)</p>
+<p>Stem and Leaf plots are used for numeric variables. (I prefer to create them by hand, as they are best used for relatively small data sets and getting R to do them just the way you want can be difficult.)</p>
+<p><strong>stem(variable, scale = number)</strong></p>
+<p>###Bar Charts and Mosaic Plots (2.6)</p>
+<p>Bar charts and mosiac plots are used when you have 2 categorical variables</p>
+<p>First, you need to create a table for the two variables</p>
+<p><strong>Table 1&lt;-table(Var1,Var2)</strong></p>
+<p><strong>barplot(Table1)</strong></p>
+<p>produces a stacked barplot (this is the default)</p>
+<p><strong>barplot(Table1, beside = T)</strong></p>
+<p>produces side by side bar plots</p>
+<p><strong>barplot(Table1, beside = T, legend.text = T)</strong></p>
+<p>for default legend</p>
+<p><strong>barplot(Table1, beside = T, legend.text =c(“Name1”,”Name2”)</strong></p>
+<p>produces a custom legend</p>
+<p><strong>main, xlab, ylab, and las</strong> may also be added to the command with the usual results</p>
+<p><strong>col</strong> may also be added for color</p>
+<p><strong>mosaicplot(Table1)</strong></p>
+<p>produces a mosaic plot</p>
+<p>all of the above options may also be added.</p>
+<p>###Scatterplots (2.7)</p>
+<p>Scatterplots are used when you have two quantitative variables</p>
+<p><strong>plot(Var1, Var2)</strong></p>
+<p>var1 on x axis, var2 on Y</p>
+<p><strong>xlab, ylab, and main</strong> may be added</p>
+<p>range of the variables may be altered with xlim and ylim (FORM: <strong>xlim=c(lower.value, upper.value)</strong></p>
+<p>size of plotting character can be changed with <strong>cex</strong> argument</p>
+<p>plotting character can be changed with <strong>pch</strong> argument</p>
+<p><strong>co</strong>l can be added</p>
+<p><strong>abline(lm(var1, var2))</strong></p>
+<p>will add the regression line</p>
+<p><strong>col</strong> may be specified for the line color</p>
+<p><strong>lty</strong> and <strong>lwd</strong> for line type and line width, may also be specified</p>
+
+      </main>
+
+      <footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+
+  <script>
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  </script>
+
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <br/><br/>
+  © Randy Potter 2020 | <a href="https://github.com/Sigmund7">Github</a>
+  <br/><br/>
+  
+</footer>
+
+
+    </div>
+  </body>
+</html>

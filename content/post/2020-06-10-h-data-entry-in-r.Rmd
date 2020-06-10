@@ -1,0 +1,96 @@
+---
+title: H Data Entry in R
+author: Doc P
+date: '2020-06-10'
+slug: h-data-entry-in-r
+categories: []
+tags: []
+---
+In this lesson we will learn how to enter a simple data set into R and get some summary information about that data set.
+My daughter recently gave me an activity tracker hoping that I would get up off the couch and get some exercise. For the first week I recorded the following number of steps:
+
+**Date 11/25 11/26 11/27 11/28 11/29 11/30 12/1**
+
+**Steps 16.8 7.1 8.3 10.8 14.3 11.2 13.0**
+
+**Goal 12.0 12.3 12.0 10.7 10.7 10.9 10.9**
+
+
+Steps are recorded in 1000s to keep the numbers smaller and easier to follow. To enter these date into R:
+
+Open R or, better yet, R studio.
+
+At the prompt type the following into the “Console” pane:
+
+**Date <- c(11/25, 11/26, 11/27, 11/28, 11/29, 11/30, 12/1)**
+
+Hit Enter, you should return to the prompt. If there is an error message you typed something incorrectly. R is very picky about spacing and capitalization, so check to see that you typed it exactly as the example.
+
+Next type: 
+
+**Steps <- c(16.8, 7.1, 8.3, 10.8, 14.3, 11.2, 13.1)** 
+
+Hit Enter. Same rules apply.
+
+Next type: 
+
+**Goal <- c(12.0, 12.3, 12.0, 10.7, 10.7, 10.9, 10.9)** 
+
+Hit Enter. Same rules again.
+
+
+At the prompt this time type:
+
+**Date**
+
+WOAH, that didn’t work. R turned the date 11/25 into a fraction and then a decimal. We will come back and fix that in a minute.
+
+Try it again with
+
+**Steps** and **Goal**.
+
+To fix the date: Use the up arrow key on your keyboard to go back up to the line where you entered the dates. Now enter quotation marks around each date. This tells R that Date is a character variable rather than a number. Now it should look like this -
+
+**Date <- c("11/25", "11/26", "11/27", "11/28", "11/29", "11/30", "12/1")**
+
+Try typing **Date** again at the prompt. You should now see a list of the dates with quotation marks around them.
+
+Just a bit more and we will quit for the time being.
+
+At the prompt type: 
+
+**summary(Steps)**
+
+you should now see values for the minimum score, the 1st quartile score, the Median, the Mean, the 3rd Quartile score, and the maximum score. Don’t worry about what all of these mean at the moment.
+
+Now type: 
+
+**summary(Goal)**
+
+R should return similar information for the variable Goal.
+
+Now try: 
+
+**summary(Date)**
+
+This retuns a rather useless summary as R does not know how to perform a summary analysis on character data.
+
+While we have the data set up we can do a few more things.
+
+Type: 
+
+**plot(Steps)**
+
+You should see a plot of Steps against an index that runs from 1 to 7. We will learn later how to replace the index with the date.
+
+Type: 
+
+**plot(Steps, Goal)**
+
+This time you will see a somewhat different plot of Steps vs. Goal
+
+Just for fun, try: 
+
+**plot(Goal, Steps)**
+
+This gives us the same information as the previous plot but with Goal on the horizontal axis and Steps on the vertical axis.
