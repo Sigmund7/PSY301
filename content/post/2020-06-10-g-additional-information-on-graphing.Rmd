@@ -1,5 +1,5 @@
 ---
-title: G Additional INformation on Graphing
+title: G Additional Information on Graphing
 author: Doc P
 date: '2020-06-10'
 slug: g-additional-information-on-graphing
@@ -9,7 +9,7 @@ tags: []
 Many other types of graphs can be created within R. Without getting too detailed here are some notes on several types you might want to use and some of the options that can be applied. If you would like to see examples, each of the sections is keyed to the Marin video that addresses the particular type of plot. Marin uses the LungCapData for his examples. It is probably best to follow the videos so you can see the results, as the sample code below is a bit cryptic because it is not keyed to a particular data set. It is, however, a good reference to remind you all that can be done to modify the various types of visual presentations.
 
 
-###Bar Charts (2.1)
+### Bar Charts (2.1)
 
 Useful for categorical variables “variable” in the statement below is the variable we want to plot. We need, first to put it in a table so R can draw the plot. "myvariable1" is just the name I chose for the table.
 
@@ -48,7 +48,7 @@ will produce a pie chart of the variable named. You can add a box around the plo
 **box()**
 
 
-###Boxplots 2.2 and 2.3
+### Boxplots 2.2 and 2.3
 
 Boxplots are used for numeric variables.
 
@@ -73,7 +73,7 @@ will produce a box plot of Var1 broken down by Var2
 will do the same thing.
 
 
-###Histograms 2.4
+### Histograms 2.4
 
 Histograms are used for numeric variables
 
@@ -108,7 +108,7 @@ adds a density plot. NOTE: Y axis must be Density, not Frequency.
 **col, lwd, main, xlab, ylab** can all be added also.
 
 
-###Stem and Leaf (2.5)
+### Stem and Leaf (2.5)
 
 Stem and Leaf plots are used for numeric variables.  (I prefer to create them by hand, as they are best used for relatively small data sets and getting R to do them just the way you want can be difficult.)
 
@@ -150,7 +150,7 @@ produces a mosaic plot
 all of the above options may also be added.
 
 
-###Scatterplots (2.7)
+### Scatterplots (2.7)
 
 Scatterplots are used when you have two quantitative variables
 
