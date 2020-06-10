@@ -10,7 +10,8 @@ tags: []
 
 
 <p>Many other types of graphs can be created within R. Without getting too detailed here are some notes on several types you might want to use and some of the options that can be applied. If you would like to see examples, each of the sections is keyed to the Marin video that addresses the particular type of plot. Marin uses the LungCapData for his examples. It is probably best to follow the videos so you can see the results, as the sample code below is a bit cryptic because it is not keyed to a particular data set. It is, however, a good reference to remind you all that can be done to modify the various types of visual presentations.</p>
-<p>###Bar Charts (2.1)</p>
+<div id="bar-charts-2.1" class="section level3">
+<h3>Bar Charts (2.1)</h3>
 <p>Useful for categorical variables “variable” in the statement below is the variable we want to plot. We need, first to put it in a table so R can draw the plot. “myvariable1” is just the name I chose for the table.</p>
 <p><strong>myvariable1 &lt;- table(variable)</strong></p>
 <p><strong>barplot(myvariable1)</strong></p>
@@ -21,7 +22,9 @@ tags: []
 <p><strong>barplot(myproportion)</strong></p>
 <p><strong>main, xlab, ylab, las</strong> can all be used as was shown in the previous crib sheet</p>
 <p><strong>names.arg = c(what names you want)</strong> can also be added if you want to change the default names of the variables.</p>
-<p>###Pie chart (2.1)</p>
+</div>
+<div id="pie-chart-2.1" class="section level3">
+<h3>Pie chart (2.1)</h3>
 <p>Pie charts are not often used in statistical analysis but are common in news reports</p>
 <p>first, create a table:</p>
 <p><strong>variabletab &lt;- table(variable)</strong></p>
@@ -29,7 +32,9 @@ tags: []
 <p><strong>pie(variabletab)</strong></p>
 <p>will produce a pie chart of the variable named. You can add a box around the plot with</p>
 <p><strong>box()</strong></p>
-<p>###Boxplots 2.2 and 2.3</p>
+</div>
+<div id="boxplots-2.2-and-2.3" class="section level3">
+<h3>Boxplots 2.2 and 2.3</h3>
 <p>Boxplots are used for numeric variables.</p>
 <p><strong>boxplot(numeric variable)</strong></p>
 <p><strong>quantile(numeric variable, probs=c(0, 0,25, 0.5, 0.75, 1)</strong></p>
@@ -41,7 +46,9 @@ tags: []
 <p>will produce a box plot of Var1 broken down by Var2</p>
 <p><strong>boxplot(Var1[Var2==“One thing”], Var1(Var2==“The other thing”]</strong></p>
 <p>will do the same thing.</p>
-<p>###Histograms 2.4</p>
+</div>
+<div id="histograms-2.4" class="section level3">
+<h3>Histograms 2.4</h3>
 <p>Histograms are used for numeric variables</p>
 <p><strong>hist(Variable)</strong></p>
 <p><strong>hist(Variable, freq = F)</strong></p>
@@ -58,7 +65,9 @@ tags: []
 <p><strong>lines(density(Variable)</strong></p>
 <p>adds a density plot. NOTE: Y axis must be Density, not Frequency.</p>
 <p><strong>col, lwd, main, xlab, ylab</strong> can all be added also.</p>
-<p>###Stem and Leaf (2.5)</p>
+</div>
+<div id="stem-and-leaf-2.5" class="section level3">
+<h3>Stem and Leaf (2.5)</h3>
 <p>Stem and Leaf plots are used for numeric variables. (I prefer to create them by hand, as they are best used for relatively small data sets and getting R to do them just the way you want can be difficult.)</p>
 <p><strong>stem(variable, scale = number)</strong></p>
 <p>###Bar Charts and Mosaic Plots (2.6)</p>
@@ -78,7 +87,9 @@ tags: []
 <p><strong>mosaicplot(Table1)</strong></p>
 <p>produces a mosaic plot</p>
 <p>all of the above options may also be added.</p>
-<p>###Scatterplots (2.7)</p>
+</div>
+<div id="scatterplots-2.7" class="section level3">
+<h3>Scatterplots (2.7)</h3>
 <p>Scatterplots are used when you have two quantitative variables</p>
 <p><strong>plot(Var1, Var2)</strong></p>
 <p>var1 on x axis, var2 on Y</p>
@@ -91,3 +102,4 @@ tags: []
 <p>will add the regression line</p>
 <p><strong>col</strong> may be specified for the line color</p>
 <p><strong>lty</strong> and <strong>lwd</strong> for line type and line width, may also be specified</p>
+</div>
