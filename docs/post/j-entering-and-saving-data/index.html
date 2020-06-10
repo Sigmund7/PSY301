@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>J Entering and Saving Data | Slumdown</title>
+
+  <link rel="stylesheet" href=../../css/palette_dark.css />
+  
+  <link rel="stylesheet" href="../../css/et_book.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="J Entering and Saving Data">
+<meta property="og:description" content="(Marin video on this topic: R tutorial 1.3)
+If our data set is small it is quite simple to type the numbers in to the R console to do our analysis. With a larger data set, especially one we might want to come back to later, it is a good idea to enter the data into a spreadsheet program such as Excel and load it into R.
+There are several ways to set up your spreadsheet file but the simplest is to save it as a .">
+<meta property="og:image" content="">
+
+</head>
+
+
+  <body>
+    
+
+
+
+    <div class="main-content">
+      <nav>
+  <ul class="menu">
+    
+    <li><a href="../../">Home</a></li>
+    
+    <li><a href="../../about/">About</a></li>
+    
+    <li><a href="../../post/">Posts</a></li>
+    
+    <li><a href="../../project/">Projects</a></li>
+    
+    <li><a href="../../tags/">Tags</a></li>
+    
+  </ul>
+</nav>
+
+      <div>
+  <h1>J Entering and Saving Data</h1>
+  <h3>
+    by Doc P, 10 Jun 2020
+  </h3>
+  <br><br>
+</div>
+
+
+      <main>
+        
+
+
+<p>(Marin video on this topic: R tutorial 1.3)</p>
+<p>If our data set is small it is quite simple to type the numbers in to the R console to do our analysis. With a larger data set, especially one we might want to come back to later, it is a good idea to enter the data into a spreadsheet program such as Excel and load it into R.</p>
+<p>There are several ways to set up your spreadsheet file but the simplest is to save it as a .csv or comma separated value file. For a simple data set where we are measuring only one thing a single column of information should be entered into your spreadsheet. For example, if we have heart rate data on 10 subjects, we would enter it as follows:</p>
+<p>Heart_Rate</p>
+<p>62</p>
+<p>83</p>
+<p>71</p>
+<p>68</p>
+<p>63</p>
+<p>80</p>
+<p>74</p>
+<p>79</p>
+<p>65</p>
+<p>69</p>
+<p>This can make for a long string of numbers if we have a large data set, but is much easier to load into R than if we had several columns.</p>
+<p>Try entering those numbers into your spreadsheet program.</p>
+<p>Now save the file as a .csv file (Save As and choose csv, if you are using Excel). I named my file Heart_Rate.csv but you can use any name you want. Save the file to the desktop.</p>
+<p>Start R and set your directory to the desktop.</p>
+<p>Now type the following code into R:</p>
+<p>HR &lt;- read.csv(“HeartRate.csv”)</p>
+<p>Type HR to list the data. It should look like this:</p>
+<pre class="r"><code>HR</code></pre>
+<pre><code>## # A tibble: 10 x 1
+##    Heart_Rate
+##         &lt;dbl&gt;
+##  1         62
+##  2         83
+##  3         71
+##  4         68
+##  5         63
+##  6         80
+##  7         74
+##  8         79
+##  9         65
+## 10         69</code></pre>
+<p>There are 10 observations of one variable (Heart_Rate). Note that R assumes the first entry is a “Header”, that is, the name of the variable, and does not count it as a value. There is a way to tell R that you do not have a header, but it’s best just to include one.</p>
+<p>If we want to add another variable to our observations that is quite simple. Reopen your spreadsheet in Excel and add the following information in column B:</p>
+<p>Weight</p>
+<p>147</p>
+<p>163</p>
+<p>158</p>
+<p>175</p>
+<p>162</p>
+<p>134</p>
+<p>129</p>
+<p>158</p>
+<p>147</p>
+<p>162</p>
+<p>Save the file to the desktop again. Now type the following into R:
+HR1&lt;-read.csv(“HeartRate1.csv”)</p>
+<p>Type HR1 to see the file.</p>
+<pre class="r"><code>HR1</code></pre>
+<pre><code>## # A tibble: 10 x 2
+##    Heart_Rate Weight
+##         &lt;dbl&gt;  &lt;dbl&gt;
+##  1         62    147
+##  2         83    163
+##  3         71    158
+##  4         68    175
+##  5         63    162
+##  6         80    134
+##  7         74    129
+##  8         79    158
+##  9         65    147
+## 10         69    162</code></pre>
+<p>We now have 10 observations of 2 variables.</p>
+<p>Now type summary(HR1) and you will see the following summary information for the data.</p>
+<pre class="r"><code>summary(HR1)</code></pre>
+<pre><code>##    Heart_Rate        Weight     
+##  Min.   :62.00   Min.   :129.0  
+##  1st Qu.:65.75   1st Qu.:147.0  
+##  Median :70.00   Median :158.0  
+##  Mean   :71.40   Mean   :153.5  
+##  3rd Qu.:77.75   3rd Qu.:162.0  
+##  Max.   :83.00   Max.   :175.0</code></pre>
+<p>Now try the following:</p>
+<p>summary(Weight)</p>
+<p>This will return an error message “object Weight not found”. This is because R does not know about a variable “Weight” only the data set named HR1. There are several ways around this problem,but the easiest is simply to “attach” the data set HR1.</p>
+<p>Type the following into R:</p>
+<p>attach(HR1)</p>
+<p>Then type:</p>
+<p>summary(Weight)</p>
+<p>which should return the same information we saw previously for the variable “Weight”.</p>
+<pre class="r"><code>attach(HR1)</code></pre>
+<pre><code>## The following object is masked from HR:
+## 
+##     Heart_Rate</code></pre>
+<pre class="r"><code>summary(Weight)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   129.0   147.0   158.0   153.5   162.0   175.0</code></pre>
+<p>Attaching the data set HR1 gives R access to the individual variables named by the headers in the data set. Again, there are other ways to do this but, for our purposes, attaching the data set is the simplest.</p>
+<p>There are other ways to save data to use in R but for us the .csv file will be our standard.</p>
+<p>If you do not have a spreadsheet program you can create a csv file in a text editor or even in a word processing program if you save it as a text file. Our Heart Rate and Weight data would look like this as a text file with commas as separators:</p>
+<p>Heart_Rate, Weight</p>
+<p>62, 147</p>
+<p>83, 163</p>
+<p>71, 158</p>
+<p>68, 175</p>
+<p>63, 162</p>
+<p>80, 134</p>
+<p>74, 129</p>
+<p>79, 158</p>
+<p>65, 147</p>
+<p>69, 162</p>
+<p>If you are using RStudio (and you should be) you can even enter your data in the text pane (upper left panel in the standard configuration), save it and then import it using the Import Dataset command in the Environment pane.</p>
+<p>The easiest way to deal with large data sets, however, is to use a spreadsheet program. If you don’t have Excel or a similar spreadsheet program there are free programs available for download from the web.</p>
+
+      </main>
+
+      <footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+
+  <script>
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  </script>
+
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <br/><br/>
+  © Randy Potter 2020 | <a href="https://github.com/Sigmund7">Github</a>
+  <br/><br/>
+  
+</footer>
+
+
+    </div>
+  </body>
+</html>

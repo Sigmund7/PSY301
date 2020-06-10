@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>L Regression With R | Slumdown</title>
+
+  <link rel="stylesheet" href=../../css/palette_dark.css />
+  
+  <link rel="stylesheet" href="../../css/et_book.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="L Regression With R">
+<meta property="og:description" content="Marin video reference 5.1
+Import and attach the LungCapData set
+We will be working with the variables Age and LungCap
+It is a good idea to begin with a scatterplot of the data. We will make Age our X or predictor variable and LungCap our Y or predicted variable.
+plot(Age, LungCap) We generally want to calculate the Pearson r for any data on which we will do a regression analysis.">
+<meta property="og:image" content="">
+
+</head>
+
+
+  <body>
+    
+
+
+
+    <div class="main-content">
+      <nav>
+  <ul class="menu">
+    
+    <li><a href="../../">Home</a></li>
+    
+    <li><a href="../../about/">About</a></li>
+    
+    <li><a href="../../post/">Posts</a></li>
+    
+    <li><a href="../../project/">Projects</a></li>
+    
+    <li><a href="../../tags/">Tags</a></li>
+    
+  </ul>
+</nav>
+
+      <div>
+  <h1>L Regression With R</h1>
+  <h3>
+    by Doc P, 10 Jun 2020
+  </h3>
+  <br><br>
+</div>
+
+
+      <main>
+        
+
+
+<p>Marin video reference 5.1</p>
+<p>Import and attach the LungCapData set</p>
+<p>We will be working with the variables Age and LungCap</p>
+<p>It is a good idea to begin with a scatterplot of the data. We will make Age our X or predictor variable and LungCap our Y or predicted variable.</p>
+<pre class="r"><code>plot(Age, LungCap)</code></pre>
+<p><img src="../../post/2020-06-10-l-regression-with-r_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>We generally want to calculate the Pearson r for any data on which we will do a regression analysis. If the value of r is low there will be little purpose in developing the regression equation.</p>
+<pre class="r"><code>cor(Age, LungCap)</code></pre>
+<pre><code>## [1] 0.8196749</code></pre>
+<p>The lm (for linear model) command is used to calculate the regression equation. We will follow Marin and place the results of our calculations in a variable called mod.</p>
+<pre class="r"><code>mod &lt;- lm(LungCap ~ Age)</code></pre>
+<p>LungCap ~ Age is read “LungCap as a function of Age”. Note that the predicted
+variable, LungCap, is listed first and the predictor, Age, is listed second. While orer does not change the results of a correlation analysis, it is important in a regression.</p>
+<p>The command “summary(mod)” will generate a summary of our model.</p>
+<pre class="r"><code>summary(mod)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = LungCap ~ Age)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.7799 -1.0203 -0.0005  0.9789  4.2650 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  1.14686    0.18353   6.249 7.06e-10 ***
+## Age          0.54485    0.01416  38.476  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.526 on 723 degrees of freedom
+## Multiple R-squared:  0.6719, Adjusted R-squared:  0.6714 
+## F-statistic:  1480 on 1 and 723 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>“Intercept”&quot; gives us the hypothetical value of LungCap when Age = 0, and “Age” gives us the slope of the line for predicting LungCap from Age.</p>
+<p>Our regression equation (in the form Y’ = aX + b) would therefore be:</p>
+<p>Y’ = 0.545 X + 1.147</p>
+<p>The remainder of the information in the summary is not of particular interest to us at this time.</p>
+<p>We can add a regression line to our scatterplot with the following commands:</p>
+<pre class="r"><code>plot(LungCap ~ Age)
+abline(mod)</code></pre>
+<p><img src="../../post/2020-06-10-l-regression-with-r_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Labels, color, line type, and captions may be added to the plot was was discussed in the tutorial on graphing.</p>
+<pre class="r"><code>confint(mod)</code></pre>
+<pre><code>##                 2.5 %    97.5 %
+## (Intercept) 0.7865454 1.5071702
+## Age         0.5170471 0.5726497</code></pre>
+<p>Will generate the 95% confidence interval for the model.</p>
+<pre class="r"><code>confint(mod, level = 0.99)</code></pre>
+<pre><code>##                 0.5 %    99.5 %
+## (Intercept) 0.6728686 1.6208470
+## Age         0.5082759 0.5814209</code></pre>
+<p>Will generate the 99% confidence interval</p>
+<p>While we will not be considering more detailed evaluation of the regression model, video 5.2 covers some of the additional analyses we might choose to perform following the development of a regression equation.</p>
+
+      </main>
+
+      <footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+
+  <script>
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  </script>
+
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <br/><br/>
+  © Randy Potter 2020 | <a href="https://github.com/Sigmund7">Github</a>
+  <br/><br/>
+  
+</footer>
+
+
+    </div>
+  </body>
+</html>

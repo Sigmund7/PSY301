@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>M Checking Regression Assumptions | Slumdown</title>
+
+  <link rel="stylesheet" href=../../css/palette_dark.css />
+  
+  <link rel="stylesheet" href="../../css/et_book.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="M Checking Regression Assumptions">
+<meta property="og:description" content="Reference: Marin Video 5.2
+WHile we will not be doing much with this information, there are several easy tests we can perform to deteremine whether a linear regression is a proper approach for eplaining a relationship.
+First, Import and attach the LungCapData set.
+Next, run the code we used in the last Crib Sheet to generate the regression analysis.
+plot(Age, LungCap) mod&lt;-lm(LungCap ~Age) summary(mod)  ## ## Call: ## lm(formula = LungCap ~ Age) ## ## Residuals: ## Min 1Q Median 3Q Max ## -4.">
+<meta property="og:image" content="">
+
+</head>
+
+
+  <body>
+    
+
+
+
+    <div class="main-content">
+      <nav>
+  <ul class="menu">
+    
+    <li><a href="../../">Home</a></li>
+    
+    <li><a href="../../about/">About</a></li>
+    
+    <li><a href="../../post/">Posts</a></li>
+    
+    <li><a href="../../project/">Projects</a></li>
+    
+    <li><a href="../../tags/">Tags</a></li>
+    
+  </ul>
+</nav>
+
+      <div>
+  <h1>M Checking Regression Assumptions</h1>
+  <h3>
+    by Doc P, 10 Jun 2020
+  </h3>
+  <br><br>
+</div>
+
+
+      <main>
+        
+
+
+<p>Reference: Marin Video 5.2</p>
+<p>WHile we will not be doing much with this information, there are several easy tests we can perform to deteremine whether a linear regression is a proper approach for eplaining a relationship.</p>
+<p>First, Import and attach the LungCapData set.</p>
+<p>Next, run the code we used in the last Crib Sheet to generate the regression analysis.</p>
+<pre class="r"><code>plot(Age, LungCap)
+mod&lt;-lm(LungCap ~Age) 
+summary(mod) </code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = LungCap ~ Age)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.7799 -1.0203 -0.0005  0.9789  4.2650 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  1.14686    0.18353   6.249 7.06e-10 ***
+## Age          0.54485    0.01416  38.476  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.526 on 723 degrees of freedom
+## Multiple R-squared:  0.6719, Adjusted R-squared:  0.6714 
+## F-statistic:  1480 on 1 and 723 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code>abline(mod)</code></pre>
+<p><img src="../../post/2020-06-10-m-checking-regression-assumptions_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>At this point “plot(mod)” will produce the diagnostic plots, hit return to cycle through the plots.</p>
+<pre class="r"><code>plot(mod)</code></pre>
+<p><img src="../../post/2020-06-10-m-checking-regression-assumptions_files/figure-html/unnamed-chunk-3-1.png" width="672" /><img src="../../post/2020-06-10-m-checking-regression-assumptions_files/figure-html/unnamed-chunk-3-2.png" width="672" /><img src="../../post/2020-06-10-m-checking-regression-assumptions_files/figure-html/unnamed-chunk-3-3.png" width="672" /><img src="../../post/2020-06-10-m-checking-regression-assumptions_files/figure-html/unnamed-chunk-3-4.png" width="672" /></p>
+<p>1st plot is a residual plot - the red line should be straight and residuals randomly distributed.</p>
+<p>2nd plot is a Q-Q plot (Quantile - Quantile) and will be a diagonal straight line if residuals are normally distributed.</p>
+<p>3rd and 4th identify other problems with which we are not concerned.</p>
+<p>Non constant variance will show up in the plots with a “megaphone” shape, while non-linearity will show up with a curved line on the diagnostic plots. Our plots look good, suggesting that a linear regression analysis is a reasonable approach for these data.</p>
+
+      </main>
+
+      <footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+
+  <script>
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  </script>
+
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <br/><br/>
+  © Randy Potter 2020 | <a href="https://github.com/Sigmund7">Github</a>
+  <br/><br/>
+  
+</footer>
+
+
+    </div>
+  </body>
+</html>

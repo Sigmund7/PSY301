@@ -1,0 +1,147 @@
+---
+title: K Correlation
+author: Doc P
+date: '2020-06-10'
+slug: k-correlation
+categories: []
+tags: []
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+In this lesson we will learn how to calculate a Pearson Product Moment Correlation Coefficient with R. We will also calculate Spearman’s Rho on the sample data set.
+
+Let’s revisit the data set we used before for the information from the activity tracker my daughter gave me.
+
+Date 11/25 11/26 11/27 11/28 11/29 11/30 12/1
+
+Steps 16.8 7.1 8.3 10.8 14.3 11.2 13.0
+
+Goal 12.0 12.3 12.0 10.7 10.7 10.9 10.9
+
+
+Steps are recorded in 1000s to keep the numbers smaller and easier to follow.
+
+To enter these date into R:
+Open R or, better yet, R studio. 
+At the prompt type:
+
+```{r}
+Date <- c("11/25", "11/26", "11/27", "11/28", "11/29", "11/30", "12/1")
+```
+
+Remember that the quotes are necessary to tell R that Date is a text string rather than a number.
+
+Hit Enter, you should return to the prompt. If there is an error message you typed something incorrectly. Remember, R is very picky about spacing and capitalization, so check to see that you typed it exactly as the example.
+
+Next type: 
+
+```{r}
+Steps <- c(16.8, 7.1, 8.3, 10.8, 14.3, 11.2, 13.1)
+```
+
+Hit Enter. Same rules apply.
+
+Next type: 
+
+```{r}
+Goal <- c(12.0, 12.3, 12.0, 10.7, 10.7, 10.9, 10.9)
+```
+
+Hit Enter. Same rules again.
+
+Just to check, type Date. It should return the dates.
+
+```{r}
+Date
+```
+
+Now try Steps and Goal (one at a time of course). The lists of steps and goals should be returned.
+
+```{r}
+Steps
+Goal
+```
+
+Now that the data are entered, let's take a look at a plot:
+
+Type: plot(Steps, Goal)
+
+```{r}
+plot(Steps, Goal)
+```
+
+This command produces a scatterplot of Steps vs. Goal.
+
+Just for fun, try: 
+
+```{r}
+plot(Goal, Steps)
+```
+
+
+This gives us the same information as the previous plot but with Goal on the horizontal axis and Steps on the vertical axis. In a correlation analysis the order of variables makes no difference, either way will work fine.
+
+So far, this is the same information we saw when we first learned to enter data. It’s always a good idea to plot our data when doing a correlational analysis just to see if there are any oddities in the data set such as non-linearity.
+
+Performing a correlation analysis in R is very simple. Type the following and hit Enter:
+
+```{r}
+cor(Steps, Goal, method = "pearson")
+```
+
+
+R returned the Pearson correlation coefficient for the data. (-0.3331106)
+
+Now try: 
+
+```{r}
+cor(Goal, Steps, method = "pearson")
+```
+
+You  get the same result, as it does not matter which variable comes first in a correlation analysis.
+
+Finally, try: 
+```{r}
+cor(Steps, Goal)
+```
+
+Again you get the same result, as the Pearson correlation is the default for correlation analysis.
+
+Should you want to calculate the Spearman rank order correlation coefficient simply specify method = “spearman”.
+Try it.
+
+```{r}
+cor(Steps, Goal, method = "spearman")
+```
+
+Because the Spearman test uses different data (ranks rather than scores), thee result is typically different from the Pearson.
+
+Additional information about the relationship can be obtained by using the "cor.test"" command.
+Type: 
+
+```{r}
+cor.test(Goal, Steps)
+```
+
+R returns a table with the Pearson correlation coefficient (as no "method"was specified, R chooses the default), a 95% confidence interval, a “t” value, and the probability that the true correlation is equal to zero - some of this may not make any sense yet but we will cover it in the future.
+
+Now try: 
+
+```{r}
+cor.test(Goal, Steps, method = "spearman")
+```
+
+Note that we get a warning telling us that the exact probability cannot be calculated if there are ties. We can suppress the warning by using the following code:
+
+```{r}
+cor.test(Goal, Steps, method = "spearman", exact = FALSE)
+```
+
+Note that the results are the same, the warning is just gone. I like to leave the warning as ties do influence the accuracy of the test and I like to be reminded if there are ties in the data. A small number of ties is not a problem but if there are several ties it can influence the probability quite a bit.
+
+Note: If you have watched the Marin video on correlation you know that he covers covariance and Kendal’s correlation coefficient. These are beyond the scope of our course, so you don’t need to worry about them.
+
+Another note: While we used a very small data set for this example in order to keep things simple, correlational analyses work best with larger data sets. With a small set, one or two observations can influence the outcome quite a bit. With a larger set of scores the influence of the occasional “outlier” is much less.
+

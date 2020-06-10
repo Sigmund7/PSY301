@@ -1,0 +1,79 @@
+---
+title: L Regression With R
+author: Doc P
+date: '2020-06-10'
+slug: l-regression-with-r
+categories: []
+tags: []
+---
+ ```{r, echo = FALSE, message=FALSE}
+  library(readr)
+  LCD <- read_csv("LungCapData.csv")
+  attach(LCD)
+  ```
+
+Marin video reference 5.1
+
+Import and attach the LungCapData set
+
+We will be working with the variables Age and LungCap
+
+It is a good idea to begin with a scatterplot of the data. We will make Age our X or predictor variable and LungCap our Y or predicted variable.
+
+```{r}
+plot(Age, LungCap)
+```
+
+We generally want to calculate the Pearson r for any data on which we will do a regression analysis. If the value of r is low there will be little purpose in developing the regression equation.
+
+```{r}
+cor(Age, LungCap)
+```
+
+The lm (for linear model) command is used to calculate the regression equation. We will follow Marin and place the results of our calculations in a variable called mod.
+
+```{r}
+mod <- lm(LungCap ~ Age)
+```
+
+LungCap ~ Age is read “LungCap as a function of Age”. Note that the predicted
+variable, LungCap, is listed first and the predictor, Age, is listed second. While orer does not change the results of a correlation analysis, it is important in a regression. 
+
+The command "summary(mod)" will generate a summary of our model.
+
+```{r}
+summary(mod)
+```
+
+
+"Intercept"" gives us the hypothetical value of LungCap when Age = 0, and "Age" gives us the slope of the line for predicting LungCap from Age.
+
+Our regression equation (in the form Y’ = aX + b) would therefore be:
+
+Y’ = 0.545 X + 1.147
+
+The remainder of the information in the summary is not of particular interest to us at this time.
+
+We can add a regression line to our scatterplot with the following commands:
+
+```{r}
+plot(LungCap ~ Age)
+abline(mod)
+```
+
+Labels, color, line type, and captions may be added to the plot was was discussed in the tutorial on graphing.
+
+```{r}
+confint(mod)
+```
+
+Will generate the 95% confidence interval for the model.
+
+```{r}
+confint(mod, level = 0.99)
+```
+
+Will generate the 99% confidence interval
+
+While we will not be considering more detailed evaluation of the regression model, video 5.2 covers some of the additional analyses we might choose to perform following the development of a regression equation.
+

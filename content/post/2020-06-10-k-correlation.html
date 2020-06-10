@@ -1,0 +1,106 @@
+---
+title: K Correlation
+author: Doc P
+date: '2020-06-10'
+slug: k-correlation
+categories: []
+tags: []
+---
+
+
+
+<p>In this lesson we will learn how to calculate a Pearson Product Moment Correlation Coefficient with R. We will also calculate Spearman’s Rho on the sample data set.</p>
+<p>Let’s revisit the data set we used before for the information from the activity tracker my daughter gave me.</p>
+<p>Date 11/25 11/26 11/27 11/28 11/29 11/30 12/1</p>
+<p>Steps 16.8 7.1 8.3 10.8 14.3 11.2 13.0</p>
+<p>Goal 12.0 12.3 12.0 10.7 10.7 10.9 10.9</p>
+<p>Steps are recorded in 1000s to keep the numbers smaller and easier to follow.</p>
+<p>To enter these date into R:
+Open R or, better yet, R studio.
+At the prompt type:</p>
+<pre class="r"><code>Date &lt;- c(&quot;11/25&quot;, &quot;11/26&quot;, &quot;11/27&quot;, &quot;11/28&quot;, &quot;11/29&quot;, &quot;11/30&quot;, &quot;12/1&quot;)</code></pre>
+<p>Remember that the quotes are necessary to tell R that Date is a text string rather than a number.</p>
+<p>Hit Enter, you should return to the prompt. If there is an error message you typed something incorrectly. Remember, R is very picky about spacing and capitalization, so check to see that you typed it exactly as the example.</p>
+<p>Next type:</p>
+<pre class="r"><code>Steps &lt;- c(16.8, 7.1, 8.3, 10.8, 14.3, 11.2, 13.1)</code></pre>
+<p>Hit Enter. Same rules apply.</p>
+<p>Next type:</p>
+<pre class="r"><code>Goal &lt;- c(12.0, 12.3, 12.0, 10.7, 10.7, 10.9, 10.9)</code></pre>
+<p>Hit Enter. Same rules again.</p>
+<p>Just to check, type Date. It should return the dates.</p>
+<pre class="r"><code>Date</code></pre>
+<pre><code>## [1] &quot;11/25&quot; &quot;11/26&quot; &quot;11/27&quot; &quot;11/28&quot; &quot;11/29&quot; &quot;11/30&quot; &quot;12/1&quot;</code></pre>
+<p>Now try Steps and Goal (one at a time of course). The lists of steps and goals should be returned.</p>
+<pre class="r"><code>Steps</code></pre>
+<pre><code>## [1] 16.8  7.1  8.3 10.8 14.3 11.2 13.1</code></pre>
+<pre class="r"><code>Goal</code></pre>
+<pre><code>## [1] 12.0 12.3 12.0 10.7 10.7 10.9 10.9</code></pre>
+<p>Now that the data are entered, let’s take a look at a plot:</p>
+<p>Type: plot(Steps, Goal)</p>
+<pre class="r"><code>plot(Steps, Goal)</code></pre>
+<p><img src="/post/2020-06-10-k-correlation_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>This command produces a scatterplot of Steps vs. Goal.</p>
+<p>Just for fun, try:</p>
+<pre class="r"><code>plot(Goal, Steps)</code></pre>
+<p><img src="/post/2020-06-10-k-correlation_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>This gives us the same information as the previous plot but with Goal on the horizontal axis and Steps on the vertical axis. In a correlation analysis the order of variables makes no difference, either way will work fine.</p>
+<p>So far, this is the same information we saw when we first learned to enter data. It’s always a good idea to plot our data when doing a correlational analysis just to see if there are any oddities in the data set such as non-linearity.</p>
+<p>Performing a correlation analysis in R is very simple. Type the following and hit Enter:</p>
+<pre class="r"><code>cor(Steps, Goal, method = &quot;pearson&quot;)</code></pre>
+<pre><code>## [1] -0.3331106</code></pre>
+<p>R returned the Pearson correlation coefficient for the data. (-0.3331106)</p>
+<p>Now try:</p>
+<pre class="r"><code>cor(Goal, Steps, method = &quot;pearson&quot;)</code></pre>
+<pre><code>## [1] -0.3331106</code></pre>
+<p>You get the same result, as it does not matter which variable comes first in a correlation analysis.</p>
+<p>Finally, try:</p>
+<pre class="r"><code>cor(Steps, Goal)</code></pre>
+<pre><code>## [1] -0.3331106</code></pre>
+<p>Again you get the same result, as the Pearson correlation is the default for correlation analysis.</p>
+<p>Should you want to calculate the Spearman rank order correlation coefficient simply specify method = “spearman”.
+Try it.</p>
+<pre class="r"><code>cor(Steps, Goal, method = &quot;spearman&quot;)</code></pre>
+<pre><code>## [1] -0.3854671</code></pre>
+<p>Because the Spearman test uses different data (ranks rather than scores), thee result is typically different from the Pearson.</p>
+<p>Additional information about the relationship can be obtained by using the “cor.test”&quot; command.
+Type:</p>
+<pre class="r"><code>cor.test(Goal, Steps)</code></pre>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  Goal and Steps
+## t = -0.78998, df = 5, p-value = 0.4653
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.8683434  0.5605665
+## sample estimates:
+##        cor 
+## -0.3331106</code></pre>
+<p>R returns a table with the Pearson correlation coefficient (as no “method”was specified, R chooses the default), a 95% confidence interval, a “t” value, and the probability that the true correlation is equal to zero - some of this may not make any sense yet but we will cover it in the future.</p>
+<p>Now try:</p>
+<pre class="r"><code>cor.test(Goal, Steps, method = &quot;spearman&quot;)</code></pre>
+<pre><code>## Warning in cor.test.default(Goal, Steps, method = &quot;spearman&quot;): Cannot compute
+## exact p-value with ties</code></pre>
+<pre><code>## 
+##  Spearman&#39;s rank correlation rho
+## 
+## data:  Goal and Steps
+## S = 77.586, p-value = 0.3931
+## alternative hypothesis: true rho is not equal to 0
+## sample estimates:
+##        rho 
+## -0.3854671</code></pre>
+<p>Note that we get a warning telling us that the exact probability cannot be calculated if there are ties. We can suppress the warning by using the following code:</p>
+<pre class="r"><code>cor.test(Goal, Steps, method = &quot;spearman&quot;, exact = FALSE)</code></pre>
+<pre><code>## 
+##  Spearman&#39;s rank correlation rho
+## 
+## data:  Goal and Steps
+## S = 77.586, p-value = 0.3931
+## alternative hypothesis: true rho is not equal to 0
+## sample estimates:
+##        rho 
+## -0.3854671</code></pre>
+<p>Note that the results are the same, the warning is just gone. I like to leave the warning as ties do influence the accuracy of the test and I like to be reminded if there are ties in the data. A small number of ties is not a problem but if there are several ties it can influence the probability quite a bit.</p>
+<p>Note: If you have watched the Marin video on correlation you know that he covers covariance and Kendal’s correlation coefficient. These are beyond the scope of our course, so you don’t need to worry about them.</p>
+<p>Another note: While we used a very small data set for this example in order to keep things simple, correlational analyses work best with larger data sets. With a small set, one or two observations can influence the outcome quite a bit. With a larger set of scores the influence of the occasional “outlier” is much less.</p>

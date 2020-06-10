@@ -6,10 +6,69 @@
     <description>Recent content in Posts on Slumdown</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>J Entering and Saving Data</title>
+      <link>/post/j-entering-and-saving-data/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/j-entering-and-saving-data/</guid>
+      <description>(Marin video on this topic: R tutorial 1.3)
+If our data set is small it is quite simple to type the numbers in to the R console to do our analysis. With a larger data set, especially one we might want to come back to later, it is a good idea to enter the data into a spreadsheet program such as Excel and load it into R.
+There are several ways to set up your spreadsheet file but the simplest is to save it as a .</description>
+    </item>
+    
+    <item>
+      <title>K Correlation</title>
+      <link>/post/k-correlation/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/k-correlation/</guid>
+      <description>In this lesson we will learn how to calculate a Pearson Product Moment Correlation Coefficient with R. We will also calculate Spearman’s Rho on the sample data set.
+Let’s revisit the data set we used before for the information from the activity tracker my daughter gave me.
+Date 11/25 11/26 11/27 11/28 11/29 11/30 12/1
+Steps 16.8 7.1 8.3 10.8 14.3 11.2 13.0
+Goal 12.0 12.3 12.0 10.7 10.7 10.</description>
+    </item>
+    
+    <item>
+      <title>K1 corrplot</title>
+      <link>/post/k1-corrplot/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/k1-corrplot/</guid>
+      <description>“corrplot” is a useful package for doing exploratory analyses of correlational data. This turorial will demonstrate the basic fetures of the package using the “CorExample2” data set. This dataset contains pre and post test scores for 66 subjects on a series of reading comprehension tests. When I imported the data I shortened the name to CorEx just to save some typing. I have already installed the “corrplot” package and as well as importing and attaching the data.</description>
+    </item>
+    
+    <item>
+      <title>L Regression With R</title>
+      <link>/post/l-regression-with-r/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/l-regression-with-r/</guid>
+      <description>Marin video reference 5.1
+Import and attach the LungCapData set
+We will be working with the variables Age and LungCap
+It is a good idea to begin with a scatterplot of the data. We will make Age our X or predictor variable and LungCap our Y or predicted variable.
+plot(Age, LungCap) We generally want to calculate the Pearson r for any data on which we will do a regression analysis.</description>
+    </item>
+    
+    <item>
+      <title>M Checking Regression Assumptions</title>
+      <link>/post/m-checking-regression-assumptions/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/m-checking-regression-assumptions/</guid>
+      <description>Reference: Marin Video 5.2
+WHile we will not be doing much with this information, there are several easy tests we can perform to deteremine whether a linear regression is a proper approach for eplaining a relationship.
+First, Import and attach the LungCapData set.
+Next, run the code we used in the last Crib Sheet to generate the regression analysis.
+plot(Age, LungCap) mod&amp;lt;-lm(LungCap ~Age) summary(mod)  ## ## Call: ## lm(formula = LungCap ~ Age) ## ## Residuals: ## Min 1Q Median 3Q Max ## -4.</description>
+    </item>
     
     <item>
       <title>N Multiple Regression in R</title>

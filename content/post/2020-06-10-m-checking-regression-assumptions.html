@@ -1,0 +1,45 @@
+---
+title: M Checking Regression Assumptions
+author: Doc P
+date: '2020-06-10'
+slug: m-checking-regression-assumptions
+categories: []
+tags: []
+---
+
+
+
+<p>Reference: Marin Video 5.2</p>
+<p>WHile we will not be doing much with this information, there are several easy tests we can perform to deteremine whether a linear regression is a proper approach for eplaining a relationship.</p>
+<p>First, Import and attach the LungCapData set.</p>
+<p>Next, run the code we used in the last Crib Sheet to generate the regression analysis.</p>
+<pre class="r"><code>plot(Age, LungCap)
+mod&lt;-lm(LungCap ~Age) 
+summary(mod) </code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = LungCap ~ Age)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.7799 -1.0203 -0.0005  0.9789  4.2650 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  1.14686    0.18353   6.249 7.06e-10 ***
+## Age          0.54485    0.01416  38.476  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1.526 on 723 degrees of freedom
+## Multiple R-squared:  0.6719, Adjusted R-squared:  0.6714 
+## F-statistic:  1480 on 1 and 723 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code>abline(mod)</code></pre>
+<p><img src="/post/2020-06-10-m-checking-regression-assumptions_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>At this point “plot(mod)” will produce the diagnostic plots, hit return to cycle through the plots.</p>
+<pre class="r"><code>plot(mod)</code></pre>
+<p><img src="/post/2020-06-10-m-checking-regression-assumptions_files/figure-html/unnamed-chunk-3-1.png" width="672" /><img src="/post/2020-06-10-m-checking-regression-assumptions_files/figure-html/unnamed-chunk-3-2.png" width="672" /><img src="/post/2020-06-10-m-checking-regression-assumptions_files/figure-html/unnamed-chunk-3-3.png" width="672" /><img src="/post/2020-06-10-m-checking-regression-assumptions_files/figure-html/unnamed-chunk-3-4.png" width="672" /></p>
+<p>1st plot is a residual plot - the red line should be straight and residuals randomly distributed.</p>
+<p>2nd plot is a Q-Q plot (Quantile - Quantile) and will be a diagonal straight line if residuals are normally distributed.</p>
+<p>3rd and 4th identify other problems with which we are not concerned.</p>
+<p>Non constant variance will show up in the plots with a “megaphone” shape, while non-linearity will show up with a curved line on the diagnostic plots. Our plots look good, suggesting that a linear regression analysis is a reasonable approach for these data.</p>
