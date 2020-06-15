@@ -1,0 +1,133 @@
+---
+title: B Index to Marin Videos
+author: ''
+date: '2020-06-15'
+slug: b-index-to-marin-videos
+categories: []
+tags: []
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Index to Marin Videos
+
+
+### Series 1 - Basics of Using R
+
+What is RStudio and Why Should You Download It? (R Tutorial 1.1): https://www.youtube.com/watch?v=riONFzJdXcs&t=33s 
+
+Introduction to R Programming: Download, Install and Setup R &  (R Tutorial 1.2): https://www.youtube.com/watch?v=cX532N_XLIs
+
+Introduction to R Programming: Getting Started With R (R Tutorial 1.3) : https://www.youtube.com/watch?v=UYclmg1_KLk
+
+Introduction to R Programming: Creating Vectors, Matrices, and Other Intro Topics (R Tutorial 1.4) : https://www.youtube.com/watch?v=2TcPAZOyV0U
+
+Import Data, Copy Data from Excel to R, Both .csv and .txt Formats (R Tutorial 1.5) : https://www.youtube.com/watch?v=qPk0YEKhqB8
+
+Export Data from R (csv, txt and other formats) (R Tutorial 1.6): https://www.youtube.com/watch?v=WjpcbmcJjjM
+
+Importing Data and Working With Data in R (R Tutorial 1.7) : https://www.youtube.com/watch?v=U4-RnTW5dfw
+
+Working with Variables and Data in R (R Tutorial 1.8) : https://www.youtube.com/watch?v=1BcGnHwUT6k
+
+Subsetting Data in R With Square Brackets and Logic Statements (R Tutorial 1.9) : https://www.youtube.com/watch?v=jGf7WNh-LX8
+
+Logic Statements (TRUE/FALSE) and cbind and rbind Command in R (R Tutorial 1.10): https://www.youtube.com/watch?v=NFaK1Qn4u3A
+
+Setting Up Working Directories in R (R Tutorial 1.11) : https://www.youtube.com/watch?v=OJ4WBjV5o1I
+
+Working With Scripts in R (R Tutorial 1.12) : https://www.youtube.com/watch?v=qqz_D1vzS5M
+
+Installing Packages in R (R Tutorial 1.13) : https://www.youtube.com/watch?v=3RWb5U3X-T8
+
+Customizing The Look of R Studio (R Tutorial 1.14) : https://www.youtube.com/watch?v=5dNNcC-UBeA
+
+### Series 2 - Graphing
+
+Bar Charts and Pie Charts in R (R Tutorial 2.1) : https://www.youtube.com/watch?v=Eph_Y0BmHU0
+
+Boxplots and Boxplots With Groups in R (R Tutorial 2.2) : https://www.youtube.com/watch?v=U64yNvlhv9I
+
+Box Plots with Two Factors (Stratified Boxplots) in R (R Tutorial 2.3): https://www.youtube.com/watch?v=s7ljwAzB5dQ
+
+Histograms in R (R Tutorial 2.4): https://www.youtube.com/watch?v=Hj1pgap4UOY
+
+Stem and Leaf Plots in R (R Tutorial 2.5) : https://www.youtube.com/watch?v=NpBRo0tRNeY
+
+Stacked Bar Charts,Clustered Bar Charts and Mosaic Plots inR (R Tutorial 2.6) : https://www.youtube.com/watch?v=rl1tB9p3FLg
+
+Scatterplots in R (R Tutorial 2.7) : https://www.youtube.com/watch?v=FEAS3akVxD8
+
+Summary Statistics in R: Mean, Standard Deviation, Frequencies, etc (R Tutorial 2.8) : https://www.youtube.com/watch?v=ACWuV16tdhY
+
+Modifying Plots in R (R Tutorial 2.9) : https://www.youtube.com/watch?v=lPOSwfxMd3c
+
+Adding Text to Plots in R (R Tutorial 2.10) : https://www.youtube.com/watch?v=Zx3Nspy8sws
+
+Adding Legends to Plots in R (R Tutorial 2.11) : https://www.youtube.com/watch?v=mB3iSp9-OPc
+
+### Series 3 - Common Distributions
+
+Binomial Distribution in R (R Tutorial 3.1) : https://www.youtube.com/watch?v=iG995W0XefU
+
+Poisson Distribution in R (R Tutorial 3.2) : https://www.youtube.com/watch?v=778WK1Pf8eI
+
+Normal Distribution in R (R Tutorial 3.3) : https://www.youtube.com/watch?v=peEsXbdMY_4
+
+t Distribution in R (R Tutorial 3.4) : https://www.youtube.com/watch?v=ETd-jPhI_tE
+
+### Series 4 - Common Statistical Tests
+
+One-Sample t Test in R (R Tutorial 4.1) : https://www.youtube.com/watch?v=kvmSAXhX9Hs
+
+Two-Sample t Test in R:Independent Groups (R Tutorial 4.2) : https://www.youtube.com/watch?v=RlhnNbPZC0A
+
+Mann Whitney U aka Wilcoxon Rank-Sum Test in R (R Tutorial 4.3) : https://www.youtube.com/watch?v=KroKhtCD9eE
+
+Bootstrap Hypothesis Testing in R with Example (R Video Tutorial 4.4): https://www.youtube.com/watch?v=Zet-qmEEfCU&t=51s
+
+Bootstrap Confidence Interval with R (R Video Tutorial 4.5): https://www.youtube.com/watch?v=Om5TMGj9td4&t=562s
+
+Permutation Hypothesis Test in R with Examples (R Tutorial 4.6): https://www.youtube.com/watch?v=xRzEWLfEEIA
+
+Paired t Test in R (R Tutorial 4.7) : https://www.youtube.com/watch?v=yD6aU0fY2lo
+
+Wilcoxon Signed Rank Test in R (R Tutorial 4.8) : https://www.youtube.com/watch?v=zM8OZUM5I4Y
+
+Analysis of Variance (ANOVA) and Multiple Comparisons in R (R Tutorial 4.9) : https://www.youtube.com/watch?v=lpdFr5SZR0Q
+
+Chi-Square Test, Fishers Exact Test, and Cross Tabulations in R (R Tutorial 4.10): https://www.youtube.com/watch?v=POiHEJqmiC0
+
+Relative Risk, Odds Ratio and Risk Difference (aka Attributable Risk) in R (R Tutorial 4.11) : https://www.youtube.com/watch?v=V_YNPQoAyCc
+
+Correlation and Covariance in R (R Tutorial 4.12) : https://www.youtube.com/watch?v=XaNKst8ODEQ
+
+### Series 5 - Regression
+
+Linear Regression in R (R Tutorial 5.1) : https://www.youtube.com/watch?v=66z_MRwtFJM
+
+Checking Linear Regression Assumptions in R (R Tutorial 5.2) : https://www.youtube.com/watch?v=eTZ4VUZHzxw
+
+Multiple Linear Regression in R (R Tutorial 5.3) : https://www.youtube.com/watch?v=q1RD5ECsSB0
+
+Changing Numeric Variable to Categorical in R (R Tutorial 5.4): https://www.youtube.com/watch?v=EWs1Ordh8nI&t=227s
+
+Dummy Variables or Indicator Variables in R (R Tutorial 5.5) : https://www.youtube.com/watch?v=2s8AwoKZ-UE
+
+Change Reference/Baseline Category for a Categorical Variable in Regression Model (R Tutorial 5.6) : https://www.youtube.com/watch?v=XJw6xdBYG7c
+
+Including Variables/ Factors in Regression with R, Part I (R Tutorial 5.7): https://www.youtube.com/watch?v=KHTBwTBkCzg
+
+Including Variables/ Factors in Regression with R, Part II (R Tutorial 5.8): https://www.youtube.com/watch?v=ZtBmMhGkxxA
+
+Multiple Linear Regression with Interaction in R (R Tutorial 5.9): https://www.youtube.com/watch?v=8YuuIsoYqsg
+
+Interpreting Interaction in Linear Regression with R (R Tutorial 5.10): https://www.youtube.com/watch?v=vZUtDJbzFRQ
+
+Partial F-Test for Variable Selection in Linear Regression (R Tutorial 5.11): https://www.youtube.com/watch?v=G_obrpV70QQ&t=338s
+
+Polynomial Regression in R (R Tutorial 5.12): https://www.youtube.com/watch?v=ZYN0YD7UfK4
+
