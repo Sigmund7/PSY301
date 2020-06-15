@@ -6,10 +6,39 @@
     <description>Recent content in Posts on Slumdown</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C Introduction to R</title>
+      <link>/post/c-introduction-to-r/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/c-introduction-to-r/</guid>
+      <description>This semester we will be using the statistical package R to do many of the calculations we will need to perform. R is a powerful, free, multi-platform package (which means that you can download it to your personal computer and keep it for use after the course is over) but it is not the easiest statistical package to use. We will also be using a package called RStudio, which makes using R a bit simpler but there is still a bit of a learning curve to each package.</description>
+    </item>
+    
+    <item>
+      <title>D Downloading R</title>
+      <link>/post/d-downloading-r/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/d-downloading-r/</guid>
+      <description>PSY 301 Statistics for the Behavioral Sciences: Introduction to “R”
+On a addition to learning some of the basic statistical techniques used in the behavioral sciences, we will be learning to use a very powerful statistical computer package called “R”. There are a number of reasons to learn “R”, not the least of which is that it is becoming the program of choice among researchers in the behavioral sciences. Our reasons for using the package are much simpler, however.</description>
+    </item>
+    
+    <item>
+      <title>E Working Directory</title>
+      <link>/post/e-working-directory/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/e-working-directory/</guid>
+      <description>The“Working Directory” is the location on your computer where R looks for and saves information. Frankly, you may never need to find or use your working directory for this class, but it is a good idea to know how to identify and alter it just in case you have a reason to do so.
+getwd() Thecommand getwd() will show you what your current working directory is. At the moment getwd() generates the following information on my computer:</description>
+    </item>
     
     <item>
       <title>F Graphing in R</title>

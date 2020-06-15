@@ -1,0 +1,46 @@
+---
+title: E Working Directory
+author: Doc P
+date: '2020-06-15'
+slug: e-working-directory
+categories: []
+tags: []
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The"Working Directory" is the location on your computer where R looks for and saves information.  Frankly, you may never need to find or use your working directory for this class, but it is a good idea to know how to identify and alter it just in case you have a reason to do so.
+
+#### getwd()
+
+Thecommand getwd() will show you what your current working directory is. At the moment getwd() generates the following information on my computer:
+
+>  getwd()
+[1] "/Users/randallpotter"
+> 
+
+That path goes to my "Home" folder, buried deep in the file system of my computer.  I like to put my files on my desktop, where I can move them to wherever they should be, so I will change my working directory.
+
+#### setwd()
+
+The command setwd() is used to modify the location of your working directory. On my computer I used the following code to set my working diretory to the desktop:
+
+setwd("~/Desktop")
+
+getwd()
+
+"/Users/randallpotter/Desktop"
+
+The tilde (~) tells R to use everything already in the file path and then add whatever follows. The following code
+
+setwd("/Users/randallpotter/Desktop")
+
+getwd()
+
+"/Users/randallpotter/Desktop"
+
+will accomplish the same thing. Note that the getwd() command returns the new working directory.  It's always a good idea to check after you make a change to be sure it worked the way you want.
+
+Another (easier) way to set the working directory is to use the dropdown menu under "Session" in RStudio and just navigate to the location of your choice. This option changes from time to time and with different operating systems, so it's a good idea to be familiar with the method given above (or at least to remember where these instructions are in case you need them).

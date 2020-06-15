@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>E Working Directory | Slumdown</title>
+
+  <link rel="stylesheet" href=../../css/palette_dark.css />
+  
+  <link rel="stylesheet" href="../../css/et_book.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="E Working Directory">
+<meta property="og:description" content="The“Working Directory” is the location on your computer where R looks for and saves information. Frankly, you may never need to find or use your working directory for this class, but it is a good idea to know how to identify and alter it just in case you have a reason to do so.
+getwd() Thecommand getwd() will show you what your current working directory is. At the moment getwd() generates the following information on my computer:">
+<meta property="og:image" content="">
+
+</head>
+
+
+  <body>
+    
+
+
+
+    <div class="main-content">
+      <nav>
+  <ul class="menu">
+    
+    <li><a href="../../">Home</a></li>
+    
+    <li><a href="../../about/">About</a></li>
+    
+    <li><a href="../../post/">Posts</a></li>
+    
+    <li><a href="../../project/">Projects</a></li>
+    
+    <li><a href="../../tags/">Tags</a></li>
+    
+  </ul>
+</nav>
+
+      <div>
+  <h1>E Working Directory</h1>
+  <h3>
+    by Doc P, 15 Jun 2020
+  </h3>
+  <br><br>
+</div>
+
+
+      <main>
+        
+
+
+<p>The“Working Directory” is the location on your computer where R looks for and saves information. Frankly, you may never need to find or use your working directory for this class, but it is a good idea to know how to identify and alter it just in case you have a reason to do so.</p>
+<div id="getwd" class="section level4">
+<h4>getwd()</h4>
+<p>Thecommand getwd() will show you what your current working directory is. At the moment getwd() generates the following information on my computer:</p>
+<blockquote>
+<p>getwd()
+[1] “/Users/randallpotter”</p>
+</blockquote>
+<p>That path goes to my “Home” folder, buried deep in the file system of my computer. I like to put my files on my desktop, where I can move them to wherever they should be, so I will change my working directory.</p>
+</div>
+<div id="setwd" class="section level4">
+<h4>setwd()</h4>
+<p>The command setwd() is used to modify the location of your working directory. On my computer I used the following code to set my working diretory to the desktop:</p>
+<p>setwd(“~/Desktop”)</p>
+<p>getwd()</p>
+<p>“/Users/randallpotter/Desktop”</p>
+<p>The tilde (~) tells R to use everything already in the file path and then add whatever follows. The following code</p>
+<p>setwd(“/Users/randallpotter/Desktop”)</p>
+<p>getwd()</p>
+<p>“/Users/randallpotter/Desktop”</p>
+<p>will accomplish the same thing. Note that the getwd() command returns the new working directory. It’s always a good idea to check after you make a change to be sure it worked the way you want.</p>
+<p>Another (easier) way to set the working directory is to use the dropdown menu under “Session” in RStudio and just navigate to the location of your choice. This option changes from time to time and with different operating systems, so it’s a good idea to be familiar with the method given above (or at least to remember where these instructions are in case you need them).</p>
+</div>
+
+      </main>
+
+      <footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+
+  <script>
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  </script>
+
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <br/><br/>
+  © Randy Potter 2020 | <a href="https://github.com/Sigmund7">Github</a>
+  <br/><br/>
+  
+</footer>
+
+
+    </div>
+  </body>
+</html>

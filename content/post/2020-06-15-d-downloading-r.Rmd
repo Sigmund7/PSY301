@@ -1,0 +1,46 @@
+---
+title: D Downloading R
+author: Doc P
+date: '2020-06-15'
+slug: d-downloading-r
+categories: []
+tags: []
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+PSY 301 Statistics for the Behavioral Sciences: Introduction to “R”
+
+On a addition to learning some of the basic statistical techniques used in the behavioral sciences, we will be learning to use a very powerful statistical computer package called “R”. There are a number of reasons to learn “R”, not the least of which is that it is becoming the program of choice among researchers in the behavioral sciences. Our reasons for using the package are much simpler, however. “R” is free, so you can download a copy to your own computer and have it to use after the class is over. “R” is available for both PCs and Macs, so no matter which platform you have, you can run it on your own computer. “R” is powerful, so you are not likely to outgrow its usefulness if you need to do more complicated statistical analyses than we will cover in this course.
+
+There are some downsides to “R”, however. It is not the most user friendly program in the world for one thing. We will overcome that in two ways. First, we will use a program called “R studio” which is a simple interface designed to be used with “R”. Second, I will talk you through examples of each type of problem we encounter step by step (or click by click). You will be able to use these templates to do both homework problems and problems on the tests.
+
+Let’s get started!
+
+While “R” is available on the computers in the departmental computer lab, you are strongly advised to download a copy to your personal computer so you can work on problems when you are not on campus (of course, if you are in the online version of the class, this item is mandatory).
+
+### To download “R”:
+
+(Mike Marin’s video R tutorial 1.2 may be helpful in installing R: https://www.youtube.com/watch?v=cX532N_XLIs&list=PLqzoL9-eJTNDw71zWePXyHx3_cm_fMP8S )
+
+Go to HTTP://www.r-project.org
+
+In the box that says Getting Started, click on “Download R”
+
+Next, click on the link to the CRAN Mirror nearest to you.
+
+Click on the link appropriate to your system, PC, Mac, or even Linux, and follow the installation instructions on the download page. While R is not currently available for Chrome OS, I'm told that some Chromebooks can run the Linux version.  I have never tried this, however, so you are on your own if you have a Chromebook. Another crib sheet will explain how to use RStudio cloud, which works with Chrome.
+
+Just to make sure that the download worked correctly you might want to run “R” before you download “R Studio”.
+ 
+### To download “R Studio”:
+
+Go to: http://www.rstudio.com/products/rstudio/download/
+
+Find the installer appropriate for your system
+
+Click on the link and follow the on screen instructions. You want the free version of "RStudio Desktop". It's currently on the left side of the download page.
+
+When it is downloaded go ahead and run “R Studio”. It should open “R” automatically.
