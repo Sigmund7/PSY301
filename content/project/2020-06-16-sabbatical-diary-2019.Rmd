@@ -1,0 +1,157 @@
+---
+title: Sabbatical Diary 2019
+author: Doc P
+date: '2020-06-16'
+slug: sabbatical-diary-2019
+categories: []
+tags: []
+---
+
+
+May 8 2019 - Worked some on cleaning office and getting upstairs office set up to work. Got ole PacBookPro running.  Began to organize the Markdown files for the last two years, which are getting to be so numerous as to be out of hand.  
+Signed up for a trial of Introduction to Statistics & Data Analysis in Public Health  from Coursera.
+
+May 9 -  In about 8:45 worked on Coursera until noon.  Afternoon I worked on my presentation for the interns at the hospital next Monday - Replication crises, research fraud and attitudes toward DOs will be the topic.
+
+May 10 - Worked more on the MOOC.  I’m most of the way through Week 4 and trying to finish it up before the free trial expires.  So far, there is little new, but I am getting some ideas of things to incorporate into statistics.
+
+May 11 - Discovered a color palette for R that is useful for color deficient individuals https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html?fbclid=IwAR0s4D07RhrJ0nZll86JEwyDG41rGhmUuEXIiN1uZJ1ROlPC4eM5JKDm-RE
+
+May 13 - Spent the morning catching up on leftover paperwork from Spring semester.  Hospital talk at noon on Replication crisis and attitudes towards DOs. Stayed home in the afternoon and updated R  and RStudio on 11” Air and Pro.  Reviewed Marin videos on Correlation and Regression. Also updated tidy verse and epiR. Got through Series 5.5.
+
+May 14 -  Reviewed Dr. Qu’s IRB proposal first thing and offered some comments to assist her in answering questions the IRB might have. Began adding Markdown documents to the weekly modules of my Spring 2019 FTF  D2L site.  It will serve as a template for the fall course. (I actually fought with the Harvey wireless most of he morning and didn’t get things uploaded until after lunch.). 
+Continued with the Marin Series 5 videos in the afternoon.  I will likely do a markdown document on changing numeric variables to categorical, as that might be useful for Jeanne’s Sr. Sem. Students.  Made it through Marin 5.10 in the afternoon.
+
+May 15 -  Created a Markdown document on the use of the “cut” command to create categories for numeric 
+data in AM, then went back to Marin 5.11.  Finished Series 5.
+
+May 16 - Began revising Crib Sheets to Markdown format.  Index to the Marin videos took a while. Made it through Crib Sheet E.
+
+May 17 - Continued on Cribs.  F and G in the morning. H and I in the afternoon - pretty mind numbing if I do say so myself.
+
+May 20 - Boat launch.  In Erie all day.
+
+May 21 -  Crib sheet J in the morning - another one with a lot of formatting but it came out nice. Finished K in the afternoon - another one that needed a lot of formatting, but the result is nice.
+
+May 22 -  Got L - P done today.  I’m not real happy with a couple of them, but want to get through the whole set before I go back and edit/expand.  Normal Curve crib sheet could use a lot of development.
+
+May 23 - Spent the entire morning doing a major rewrite  of the t-test crib sheet.  It is much improved and now includes  detailed instructions to interpret the output of the tests.  ChiSq is next and is also going to be a major challenge as there are so many ways to run it in R.
+
+May 24 - Chi Squared and Mann Whitney in the morning.  Chi Squared was a real job of work but the crib sheet is much improved.  Wilcoxon T after lunch.
+
+May 28 -  Revised ANOVA crib sheet and split out Kruskal-Wallis. 
+
+May 29 -  Revised two-way ANOVA.  That’s the ned of the revisions of existing crib sheets, but there are several I’d like to do in the future - effect size,  repeated measures, mixed designs come to mind, as well as odds ratios and survival analysis.
+
+May 30 - Began reviewing newer Marin videos to see what additional crib sheets I should develop.  Odds Ratios with epiR is one I should do.
+
+May 31 -  Began reviewing “Passion Driven Statistics”.  I doubt that I will use it, as it is a bit more advanced than my students.  On the other hand, it may be useful for Sr. Sem. Projects, as it contains information about literature reviews and poster development.  Ordered new version of R for the computer lab.
+
+June 3 - Started the week working on repeated measures ANOVA - we usually don’t get to it in Stat, but it’s something I’d like to be able to have for the Sr. Sem students as many of their projects are RM.  Spent the morning fighting with different approaches in R to do a simple RM ANOVA with no luck.  After lunch, I downloaded Jamovi and got an answer matching Keppel on first try.  Now I need to figure out how Jamovi does its RM ANOVA because it is based on R.
+
+June 4 - Still working on RM ANOVA.  I’m hoping that the “Statistics of Doom” video on the subject has the answer.  It’s detailed, and long, but seems pretty thorough.  (Still no joy - same answer as other methods and does not match hand calculations or Jamovi.) Hmm, the Jamovi results now match R but not the hand calculations.
+
+Finally got everything to match.  Here is the code that ran (Modified from “Statistics of Doom”)
+
+library(reshape)
+Kwide <- read.csv("~/Desktop/Kwide.csv")
+View(Kwide)
+Klong <- melt(Kwide,)
+Klong <- melt(Kwide, id = "Subject", measured = c("Trial1", "Trial2", "Trial3","Trial4","Trial5", "Trial6"))
+Klong
+colnames(Klong) = c("Subject", "Trial", "Score")
+head(Klong)
+View(Klong)
+View(Kwide)
+library(ez)
+ezANOVA(data = Klong, wid = Subject, within = Trial, dv = Score, type = 3)
+
+# Can also use the long form data set (Keppel404) if you import with readr and change subject and trial to factors.
+
+
+anova1 <- aov(score ~ trial + Error(subject/score)). # also works, but the results are slightly different (possibly a different type of SS calculation)
+
+June 5 -  Office moving day.  Not really sabbatical related, but, if I don’t do it, it won’t happen.
+
+June 6 -  Did a crib sheet on single factor repeated measures ANOVA, using the ez package.
+
+June 7 -  Edited analgesia manuscript, organized office a bit and began working on 2 way RM ANOVA.
+
+June 10 -  Hospital day.  Reviewed Marin’s videos on odds ratio, relative risk, attributable risk and epiR after the talk.  That will be our topic next month.
+
+June 11 - Moved the markdown crib sheets into the 2191 stat folder and checked to see if they all opened.  There may still be edits before the fall semester starts,  but they should be about ready to go.  
+
+June 12 -  Rewrote the week 1 homework handout in Markdown.  Not all of them will work as Markdown documents, but that one is much improved.
+
+June 13 - Revised Week 2 homework to Markdown (also revised the content so it required more than just cutting and pasting the code I provided. Also revised week 3 and put it into Markdown format.
+
+June 14 -  Weeks 4 and 5 homework assignments changed to Markdown format
+
+June 17 -  Modified Weeks 6 and 7 to Markdown.  Decided to do the remainder of the development in my “Development” shell because the Spring 2019 shell is set up for a Spring break.  The development shell is just a regular 15 week semester stretched to 16 weeks by lost days. Got through Week 9 for the Fall (Development Shell) and about week7 for Spring.
+
+June 18 -  Spent most of the morning getting caught up on emails that needed responses.  Started on Week 10 homework revisions.  Made it through week 14 for the fall should be able to finish 15 ind 16 as well as some of the spring versions tomorrow
+
+June 19 -  Finished up Weeks 15 and 16 for Fall but I just can’t face starting the revisions for the Spring, so I’m going to take a look at Shiny and see if I can use it for any class related things.  Watched Part 1 of the RStudio webinar on Shiny. Played around with some of the remade apps on RStudio.
+
+June 20 more Shiny and Spring stat schedule.  Got all of the documents for stat updated to markdown and made it through 1:25 of the Shiny webinar.  Lots of good webinars on the RStudio site - I may use some for stat.
+
+June 21 -  Debb is off today so I am working from home until orientation at 2.  Marin’s videos on epidemiology so I can incorporate some into stat.  Odds Ratios, Bootstrapping and Permutation Hypothesis Testing.
+
+June 23 -  The internet went out on Friday, so I finished up some of the bootstrapping videos over the weekend.  Also discovered an R package called “corrplot” which looks the be useful for visualizations of correlation matrices.
+
+June 24 -  corrplott and bootstrapping today
+
+June 25 -  Returned the research survey for the hospital today and worked up a new crib sheet  (K1) on “core-lot”.
+
+June 26 - Worked on bootstrapping/resampling.  Reviewed Marin videos and downloaded his scripts.  Also read the Chancellor’s latest blog.
+
+June 27 -  More bootstrapping and reviewed the Yarr video on Markdown, just to seee how many details I have forgotten.
+
+June 28 - I decided not to do a handout on bootstrapping as I will not be using the technique in stat and Marin’s scripts are so well commented that I can follow them without additional text.  Started working on my “Summary of Statistics” for the interns. 
+
+
+July 1 - Finished up correlation and regression for the summary but I’m kind of stuck on how to present Odds Ratios and the like.
+
+July 2 -  Time to start reading Python - the other part of my sabbatical project. Installed Python 3.7 and PyCharm.  Uninstalled Python 3.6 and Anaconda.  Managed to do a “Hello World”  Got through 30 minutes of “Python for beginners “ in about 2 hours https://www.youtube.com/watch?v=_uQrJ0TkZlc 
+
+July 3 - “Finished up” the handout for Monday on basic statistical concepts, although I also decided that there are more topics to be covered.  ROC curves and Number needed to treat are two that come to mind. Back to Python for the afternoon.
+
+July 4 - No plans to break a sweat today, but I thought some python and a look at “LearningStatistics With R” would be a reasonable thing to do.
+
+July 5 - Finally learned how to post a pdf to my website, which means that I can post documents with clickable links instead of having to copy and past them.  Posted the July hospital links and the first part of the stat review this morning.  Back to Navarro for the afternoon.
+
+July 8 - Hospital talk day.  Worked on Python in AM. Worked more on Python in PM t home after hospital.
+
+July 9 -  Learning Stat with R (LSR) day. Lunch with Dave S and a chairs meeting at 2.
+
+July 10 - More Python in the AM. I’ve decided to just view my way through the whole 6 hours of video to get an overview and then decide where to go from there. Got through the third hour and then took a break to watch a video on using PyCharm.
+
+July 11 -  Worked through the 4th hour of Python in the AM.  Navarro in the afternoon
+
+July 12 -  Summer preview day.
+
+July 15 - Back to Python in the AM - machine learning section of the course today, about which I know nothing.  So far, it’s quite interesting. The machine learning section was one hour and quite interesting.  I’m going to have to come back to it and work through it is some depth.  I think the decision tree approach might be a good way for students ti visualize linear models.  Hour 6 is on Django, which will wait until tomorrow.  LSR for the remainder of the morning, then lunch with the APA rep.  Made it to page 93 of Navarro.
+
+July 16 - Finished the Python tutorial in AM.  Today’s topic was Django, which was interesting, but probably not anything that I will pursue further.  Yesterday’s info an AI and Pandas does look like it iw worthy. Bit more time.  I’ll need to reinstall Anaconda for Pandas, but that should not be an issue. Finished Chapter 4 of LSR before the Strategic Planning meeting (Mission).
+
+July 17 - Having finished the Python course, I’m going to take a break for a while and concentrate on LSR. (Made it to page 162 before my eyes crossed.)
+
+July 18 -  Navarro, Graphing.  I’m actually learning a lot of new things.
+
+July 19 - More Navarro, more graphing.  Orientation day. Page 210 of lsr by lunch.
+
+July 22 -  Plodding through LSR still.  It’s slow going because I am trying to work many of the examples as I read through the text. Made it to 258 in the programming chapter.
+
+July 23 -  LSR in the AM before the meeting on Harvey signage.  Then a dentist appointment, back for some LSR and a chairs meeting.  Not a real productive day, but productive enough.
+
+July 24 - LSR.  Technically, this is the last day my planned 12 weeks of work on the sabbatical for this summer (and the completion of my 36 week commitment for the 4 summers). I’m certainly not going to quit working on things, but I need to focus on preparation for fall classes see.  That will be my primary focus for the remainder of the summer.
+
+July 25 - Worked on schedules for fall classes in the AM decided to read a bit of LSR after lunch.
+
+July 26 - Abusive mother n the AM
+
+July 29 -  Revised Syllabi in the AM - Have all the new crib sheets uploaded for stat and all the discussion boards set for Biopsych and General.  Still need to do the Homework assignments for Stat.  Eyse crossed from dealing with dates and details, so I am doing some LSR in the afternoon.
+
+July 30/31 - Worked on D2L for fall classes. COuldn’t face any more calendar changes in the afternoon, so I went back to LSR.
+
+

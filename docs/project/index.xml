@@ -12,15 +12,6 @@
     
     
     <item>
-      <title></title>
-      <link>/project/</link>
-      <pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Sabbatical Diary 2017</title>
       <link>/project/sabbatical-diary-2017/</link>
       <pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate>
@@ -29,6 +20,28 @@
       <description>10 May - Final exam in stat - installed “yarrr” and “dplyr” on laptop for use this Summer.
 16 May Enrolled in Coursera Pyhon for Data Science and Qualitative methods courses.
 17 May The Coursera Python course is a bit much for now, so I am going back to Chuck Severance’s PY4E videos. We will see if I can make enough progress to do the course by the time it ‘officially’ begins.</description>
+    </item>
+    
+    <item>
+      <title>Sabbatical Diary 2018</title>
+      <link>/project/sabbatical-diary-2018/</link>
+      <pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/project/sabbatical-diary-2018/</guid>
+      <description>May 1 - Downloaded “ Bookdown ” and played with it a bit but was unable to get it to work. Maybe tomorrow.
+May 2 - figured out how to get the “Minimal Example” to work. Downloaded MacTeX. Watched into video on Bookdiwn: https://www.youtube.com/watch?v=dVqVscgwSpw&amp;amp;t=71s . Starting from scratch demo begins c 26:30. Updated R to current version. Added markdown
+May 7 - Began working through the “tutorials.blogspot.com” tutorials and downloaded the data sets to go with them (data are on the Summer 2018 flash).</description>
+    </item>
+    
+    <item>
+      <title>Sabbatical Diary 2019</title>
+      <link>/project/sabbatical-diary-2019/</link>
+      <pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/project/sabbatical-diary-2019/</guid>
+      <description>May 8 2019 - Worked some on cleaning office and getting upstairs office set up to work. Got ole PacBookPro running. Began to organize the Markdown files for the last two years, which are getting to be so numerous as to be out of hand.
+Signed up for a trial of Introduction to Statistics &amp;amp; Data Analysis in Public Health from Coursera.
+May 9 - In about 8:45 worked on Coursera until noon.</description>
     </item>
     
     <item>
