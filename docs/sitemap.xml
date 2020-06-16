@@ -3,6 +3,26 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/project/</loc>
+    <lastmod>2020-06-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-06-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/</loc>
+    <lastmod>2020-06-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/sabbatical-diary-2017/</loc>
+    <lastmod>2020-06-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/a-index-to-crib-sheets/</loc>
     <lastmod>2020-06-15T00:00:00+00:00</lastmod>
   </url>
@@ -24,11 +44,6 @@
   
   <url>
     <loc>/post/e-working-directory/</loc>
-    <lastmod>2020-06-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
     <lastmod>2020-06-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -209,11 +224,6 @@
   
   <url>
     <loc>/tags/kunoichi/</loc>
-    <lastmod>2019-04-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/</loc>
     <lastmod>2019-04-15T00:00:00+00:00</lastmod>
   </url>
   

@@ -6,10 +6,30 @@
     <description>Recent content in Projects on Slumdown</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>/project/</link>
+      <pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sabbatical Diary 2017</title>
+      <link>/project/sabbatical-diary-2017/</link>
+      <pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/project/sabbatical-diary-2017/</guid>
+      <description>10 May - Final exam in stat - installed “yarrr” and “dplyr” on laptop for use this Summer.
+16 May Enrolled in Coursera Pyhon for Data Science and Qualitative methods courses.
+17 May The Coursera Python course is a bit much for now, so I am going back to Chuck Severance’s PY4E videos. We will see if I can make enough progress to do the course by the time it ‘officially’ begins.</description>
+    </item>
     
     <item>
       <title>A kunoichi page</title>
