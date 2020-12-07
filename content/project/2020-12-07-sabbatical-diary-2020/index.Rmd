@@ -1,0 +1,105 @@
+---
+title: Sabbatical Diary 2020
+author: Randy Potter
+date: '2020-12-07'
+slug: sabbatical-diary-2020
+categories: []
+tags: []
+---
+May 11 - Start of a new Summer.  There has been a slight change of plans due to the retirement of Mark Mitchell.  I was going to switch over to Python for the Summer but, as I will be teaching Research Methods beginning in the Fall, what I will do instead is extend my R handouts to the somewhat more complicated analyses used in Methods.
+
+Just as a check, I totaled my work weeks for the last three Summers : 2017 - 13 weeks, 2018 - 15 weeks, and 2019 - 12 weeks, for a total of 40 weeks.  As a sabbatical is, by definition, 18 weeks and each Summer is 1/2 of a sabbatical, my total commitment for four Summers is 36 weeks.  In short, really doesn’t matter what I do this Summer, as my project commitment is completed.
+
+That said, my first order of business for the Summer is to read Beth Morling’s Research Methods in Psychology, 3rd Edition to begin to plot out what new R techniques I need to learn. 
+
+May 12 - Nastygam from Tim F suggested that appearance on campus was frowned upon so I’m working form home.  Read chapters 6, 7, and 8 of Morling before  the chairs council meeting from 2 until 4.
+
+May 13 -  Chapters 9 and 10 or Morling as well as comments on the Academic sustainability plan.
+
+May 14 - Chapters 11 and12 Morling. hope to finish the content tomorrow.
+
+May 15 - Finished Morling (13 and 14) still need to read through the appendices, but next week I can start putting the ancillaries into a workable order for a class.
+
+May 18 -  Morning at Harvey working on substitutions for Mat Kephart, watering plants, and picking up the ancillary times for Morling. Working on the statistics review  in PM.  Made it through the descriptive statistics review before lunch. Made it through the inferential review after lunch.
+
+May 19 -Finished Morling .  APA Style chapter is based o 6th editions the style manual so will need to be updated, but I really like the approach of working through a sample paper and demonstrating all of the citation styles and such.  That’s the best way to learn, by example rather than by abstract description. Also found an article from 2017 about Bem’s research that I think I may have the methods class read early on.
+
+May 20 -  Began to review the ancillaries for Morling and was happy to find that the Everydayresearch methods.com blog contains up to date examples relating to much of the information in the text. Upgraded Screenflow to version 9 and will try to put Jeanne’s PPT in YouTube format.
+
+May 21 - Found a new Danielle Navarro class on data visualization (https://robust-tools.djnavarro.net/), containing code and videos for ggplot2 data visualization.  This is probably going to occupy me for several days and may be used in Methods (will certainly be adapted for use in Methods). Also downloaded AppCleaner and removed a bunch of old incompatible apps from the 11” Air. Updated R and RStudio.
+
+May 22 - Finished the first module of Navarro and 1/3 of the second
+
+May 26 - After a nice holiday weekend, I awoke to an 8:30 am meeting today to find that our Dean  is leaving.  The fun never ends.  Responded to a research question from Erin Lewis - hope I didn’t send her in the wrong direction - and then went back to Navarro. Got through part i  and 2 of “dplyr, or a dance with data” Pickup link:  https://www.youtube.com/watch?v=gPIOWUmpj60&list=PLRPB0ZzEYegNFsivhQWTFvKvpEc504EPH&index=3
+
+May 27 -  Harvey in the AM to clear out email.  Navarro in the afternoon.  Finished watching the dplyr videos. Lots of good information on manipulating large data sets but not much that I would throw at my stat or methods students.  Perhaps more useful for Sr. Sem.
+
+May 28 -  Started section 4 of Navarro. Placekitten website: https://placekitten.com Section 4 is on “Blogdown”  which should be useful in preparing handouts for class.
+
+May 29 - More blogdown.  I’m going to need to build a site following the videos step by step.  I think ti will be worth it, but it means I need to stat the blogdown videos anew
+
+June 1 -  More blogdown - actually got the site up and running but it still needs to be edited from the template.
+
+June 2 - made some changes to the indices but i can’t seem to edit the homepage.  I think I’ll work some on Moreland and return to Navarro tomorrow.
+
+June 3 - Decided to restart the statistics blog so that I can avoid some of the issues I created by making changes.
+
+June 4 - Learned a lot about R, RStudio, and Blogdown today.  Unfortunately I did not learn how to import a data set from GitHub into a Blogdown project
+
+June 5 - Finally managed to get Blogdown to import a data set so that I could run a crib sheet on GitHub.  I should be able to modify the code for the RM ANOVA post to work with all of the other crib sheets.  It being Friday, I’m knocking off at 1:00 PM to do yard work.
+
+June 8 - Added Several crib sheets to the blog  2 way ANOVA, KW, One way ANOVA, Wilcoxon T, and MWU.  Had to reinvent the code to upload data to blogdown, as I forgot to save it on Friday it is now in the Notes document that I’m keeping with the blog
+
+June 9 - added five more crib sheets to the GitHub blog.
+
+June 10 - More crib sheets. Only five to go but some of the basic ones need to be revised because of changes in the software.
+
+June 11 -  Interviews for the 3/4 temp position.
+
+June 12 -  Harvey day. Needed to catch up  on email and filing.  Also filed Credit for Prior Learning  for Matt Kephart.
+
+June 15 -  All of the remaining crib sheets were uploaded to GitHub. https://sigmund7.github.io/PSY301/   I need to write one additional crib sheet for RStudio cloud, for the benefit of students who are trying to survive with a Chromebook.
+
+June 16 - Sabbatical diaries for 2017 - 19 loaded into the “Projects” folder of the website.  I’m not sure I need a crib sheet for RStudio.cloud, as it is so easy to set up. probably a demo in class will suffice.  The bad new is that the beta test is over on August 3 and the free version is limited to 15 hours a month.  I’m not sure that is enough for some students.  I will recommend downloading and installing the regular version if possible.  The good news is that I was able to run the cloud version on an iPad. I need to play with that more, but it should solve some problems.
+
+June 17 -  Started working on ggplot2.  I probably won’t use it in stat, as it requires downloading the package and is more complicated than the base graphics, but it is good that I know it.
+
+June 18 - Statistical consult for Suicide Awareness project
+
+June 19 -  Juneteenth was declared a holiday by university administration.  Being a Friday I needed to go into Harvey in the morning anyway, to do the weekly filing and email followups which are not easily done from home.
+
+June 22 - Course shells open this week, so I am going to upload revised materials to stat and methods and begin working on a calendar for the semester.  Hard to believe that summer is just started and fall course prep is happening.
+
+June 23 -  Developed Fall calendars for all courses.  Added exam dates and began working on content.
+
+June 24 -  Copied components for stat and general so I can begin revising dates and the like as well as revising syllabus assignments and grading. Got the Fall FTF General Syllabus drafted.
+
+June 25  - Revised both General Psychology syllabi. Calendars and syllabi are now done for those classes.
+
+June 26 - Harvey in the morning to file email and deal with correspondence that required access to campus material. Dave Schlueter for lunch.
+
+June 29 - Fall course shells and a Re-opening Zoom.  Updated due dates for W01C.
+
+June 30 - Discussion dates for 211C03 updated. Also updated Quiz dates and increased he allowable attempts to 3 (these do not enter into grade determination anyway, so more practice is good). Updated attempts for W01C also. Still have to decide what I am doing with exams for the FTF section.
+
+July 7 -  As #2 daughter had a semi-emergency C section on June 30 and we have had grandson Monte pretty much since then, work has been rather spotty for the last week.  As classes resume in just over a month, new projects are probably on hold at least until I get the D2L sites set up.  I’ll update on occasion, but sabbatical is likely pretty much over.
+
+July 8 - Finished calendar for stat updated due dates for weeks 1 - 2
+
+July 14 - Have been working on syllabi and the like for the last few days.  Got going on the Methods syllabus today in the AM and then attended the LTC webinar from 12 - 1:30.
+
+July 15 - LTC Webinar on D2L quiz feature form 10 - 12.  Worked on syllabi in the afternoon and started rereading Morling.
+
+July 16 - BOG meeting
+
+July 17 - Jada Smith in AM - wants Biopsych to be waived, not by me.  Did the usual housekeeping at Harvey in AM and then purged my Sandbox course so that I could download the course pack for Morling.  Need to get J to help me set up an exam.
+
+July 20, 21 - Completed 311 Syllabus and revised all calendars to reflect classes on ALF Friday.  Webinar on flipped classes at noon.
+
+July 22 - Morling until 10 and then a webinar on group work in d2l, campus pack and Zoom. 
+
+July 28 - Got through chapter 7 of Morling in the am and then did the LTC webinar from noon to 1:30.
+
+July 29 - At the 10 am webinar on using video notes in D2L I found out we are online for the fall.  That means retooling Methods completely (although I am not particularly surprised).
+
+August 7, 8 - More webinars this week through LTC and trying to get Methods up and running.  Worked on the Methods D2L site and did Pam’s webinar in the PM
